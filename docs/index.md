@@ -7,6 +7,8 @@ tags:
 
 ## Et poposcerat rursus ad magnus premit
 
+![Dice](https://github.com/sanjitsk/sanjitsk.github.io/blob/main/PNG_transparency_demonstration_1.png)
+
 Lorem markdownum gradus, qui largis, nec pater pleno: fatum. Adspexit cursus
 cur, aut in adhuc crimina **habebat**: pro.
 
