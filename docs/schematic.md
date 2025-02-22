@@ -3,7 +3,7 @@
 
 ## Block Diagram
 Here is the block diagram for Internet Communication Subsystem:
-![Stage 1: Ideation](schematic.png)
+![Stage 1: Ideation](./subfolder/schematic.png)
 
 ## Schematic Files
 
