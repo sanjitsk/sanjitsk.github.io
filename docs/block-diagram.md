@@ -8,10 +8,10 @@ permalink: /block-diagram/
 **Author:** Sanjit Selvakumar Kavitha
 
 ## Overview  
-This page presents the block diagram for the Wifi Communication Subsystem 
+This page presents the block diagram for the Wifi/ Internet Communication Subsystem 
 
 ## Block Diagram Preview  
-![Block Diagram](docs/blockdiagram.png)
+![Block Diagram](./subfolder/schematic.png)
 
 ## Download the Block Diagram  
 [Download Block Diagram PDF](https://drive.google.com/file/d/1Zu_ZALLJ08QVjuWkUUsSZqnZJdQ2op89/view?usp=sharing)
