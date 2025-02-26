@@ -11,7 +11,7 @@ permalink: /block-diagram/
 This page presents the block diagram for the Wifi Communication Subsystem 
 
 ## Block Diagram Preview  
-![Block Diagram](./docs/subfolder/blockdiagram.png)
+![Block Diagram](docs/blockdiagram.png)
 
 ## Download the Block Diagram  
 [Download Block Diagram PDF](https://drive.google.com/file/d/1Zu_ZALLJ08QVjuWkUUsSZqnZJdQ2op89/view?usp=sharing)
