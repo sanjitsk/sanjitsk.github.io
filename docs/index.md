@@ -1,92 +1,41 @@
 ---
 title: Welcome
-tags:
-- tag1
-- tag2
 ---
 
-## Et poposcerat rursus ad magnus premit
+Name: Sanjit Selvakumar Kavitha  
+Class: EGR314 - 12:00PM Monday/Wednesday  
+Professor: Dr. Kevin Nichols
+Team Website: [Click Here!](https://ethan-s-team-314.github.io/Team-Organization-and-Charter/)
 
-![Dice](https://github.com/sanjitsk/sanjitsk.github.io/blob/main/PNG_transparency_demonstration_1.png)
+## Home
 
-Lorem markdownum gradus, qui largis, nec pater pleno: fatum. Adspexit cursus
-cur, aut in adhuc crimina **habebat**: pro.
+[Block Diagram](./block-diagram.md)  
+[Component Selection](./component-selection.md)  
+[Schematic & Bill of Materials](./schematic.md)
 
-- Et ducimus
-- Prosecta hinc nix vidi rettulit cum sitim
-- Has in tonitribus tenebrae Romane mirantum resupina
-- Figuras et dextram
+## About Me
 
-## Esse quoque sedem plena nunc iecur
+Sanjit's EGR 314 Project  
 
-Possemque suos dumque. Deum recta rogantem, inquinat facta gigantas; ego nisi
-mea. Nec tamen quae gravem, potens, [cognoscendo
-scripta](http://vidit-lumine.io/sinusdeum). *Nihil ventis Aeneae* probat.
+Engineering Showcase  
 
-1. listum primo
+About the Project
+Welcome! My name is Sanjit, and this project is part of my junior year Engineering showcase. Our mission is to design and deliver a STEM-themed, interactive, web-enabled device that inspires K-12 students to explore science, technology, engineering, and math (STEM).
 
-    discusso el codex:
+Team Goals
 
-        if (pimProgressiveMashup(recursive_upnp_barcraft, seo) == file.station_leaf(
-                optical + 1, compact_docking)) {
-            rt_programming_system(udpScraping, marketRegularMetal,
-                    threadingNuiRoom);
-            vlogVaporwarePage += 5 + xhtmlDiskReader;
-            access.kbps_footer.dialogZettabyte(3, cloud_midi_spoofing, ipad_macro);
-        }
-        if (maskProcessorKbps(programming, user, cache_web) >= file *
-                publishingDual) {
-            hibernate.flash_network -= 4;
-            bar = goodput_flash;
-            streaming = voip_flatbed - 1;
-        } else {
-            clipCd(jquery, 55 - -1, touchscreen);
-            plagiarism_command_e = cleanHardIcio;
-            recursion = checksum;
-        }
-        clock(roomCaptcha, 2);
+Develop a high-quality, market-ready product.
+Work collaboratively to achieve team goals.
+Adhere to industry standards and modular design principles.
+Enhance technical expertise by tackling real-world challenges.
+Design an engaging and user-friendly experience for K-12 students.
+Prioritize sustainability and innovation.
+Manage project timelines and budgets effectively.
+Ensure strong team coordination and accountability.
 
-2. listum secundum
+Our team consists of:  
 
-    > warningum alertum
-
-3. listum adnauseum
-
-## Pondus ante Ialysios vultu exasperat loqui sanguine
-
-Iacere non, quis nimbis. Dumque tibi minora clamabat contigit vacant, sepulcro
-coniugis quae; mihi! Solent adeste faventibus, perque penates, currere in quater
-Odrysius ferro, vota, vero mittat crinibus, quae. Hanc mundi, ipse vultu voce
-sub quae heros forsitan imagine in tecum Cephalus? Formosissimus vela; vapore
-oris, aera, utendum ostendisse regnum Centaurorum elice.
-
-    if (searchVrmlCpm <= traceroute) {
-        bittorrentExbibyte = del;
-        fsb_left = -2 + lifoTypeSpam;
-        sync.bcc(errorAtm(66, boot, link), meta_personal_hdd, leak.leopard(3,
-                scsi_logic_interpreter, multithreading));
-    } else {
-        pumCcdInbox = access;
-    }
-    w = vpi_computer(wrap_market(isp_gbps, ipvBsodQuery)) - search_name_sector;
-    if (linkedinBankruptcy(newsgroupFlowchartDisk(scareware_burn, aiffSequence),
-            userTimeChecksum(disk))) {
-        fifo_optic_dual(4, method_ajax_hyperlink + adware_gigahertz,
-                tag_rootkit_output);
-    }
-    if (memory.fsb(client_template, typeface_memory_bridge) < newbie_socket_gif(
-            storageModemDrive, kilohertz_yottabyte_middleware)) {
-        dimm.dvd_character.hover(hibernate);
-        exif = unmountVirusRss * 5;
-    } else {
-        localhost_adapter += character_olap_white;
-        subnet(internal_dongle + card);
-    }
-    var hibernateAlert = formatCmsCompression(1 / and_tcp + 5);
-
-Miserande evanida amanti, succiduo, dare mihi quid amnis venit Rhadamanthus.
-Tamen aer Sirenum cadunt fallacis tundit, Aquilonem, capiam nec soleat hic
-auctor eodem **undique collectum ferrugine**. Femina telum, deam saepe piceis,
-ille spisso suam genitorque regia invictus Hactenus esset quoque equina.
-Accepisse viam nunc uberior vix maxima libera locutum munus eminet moresque di
-ingentia non.
+- Ethan: Team lead and Assignment Head. 
+- Kevin: Documentation Head.
+- Sanjit: Electrical / Hardware design head 
+- Siddanth: PCB head
