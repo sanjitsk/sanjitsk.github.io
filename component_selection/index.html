@@ -456,8 +456,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#responsibilities" class="md-nav__link">
-    Responsibilities
+  <a href="#responsibilities-for-the-subsystem" class="md-nav__link">
+    Responsibilities for the subsystem
   </a>
   
 </li>
@@ -653,8 +653,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#responsibilities" class="md-nav__link">
-    Responsibilities
+  <a href="#responsibilities-for-the-subsystem" class="md-nav__link">
+    Responsibilities for the subsystem
   </a>
   
 </li>
@@ -711,11 +711,11 @@
 
 <h1 id="subsystem-documentation-wi-fi-enabled-data-collection-and-transmission">Subsystem Documentation: Wi-Fi-Enabled Data Collection and Transmission</h1>
 <h2 id="introduction"><strong>Introduction</strong></h2>
-<p>As part of our embedded systems design project, my subsystem is responsible for collecting data from all sensors in the system, transmitting it via a Wi-Fi network created by the ESP32 microcontroller, and updating this data in real-time on a GitHub-hosted webpage. This document outlines the selection of components for my subsystem, focusing on efficient power regulation, reliable wireless communication, and seamless integration with sensors.</p>
+<p>As part of our embedded systems design project, this subsystem is responsible for acquiring sensor data, transmitting it over a Wi-Fi network established by the ESP32 microcontroller, and updating a GitHub-hosted webpage in real time. This document details the component selection process, focusing on efficient power regulation, reliable wireless communication, and seamless sensor integration.</p>
 <hr />
 <h2 id="major-component-selections"><strong>Major Component Selections</strong></h2>
 <h3 id="microcontroller-selection"><strong>Microcontroller Selection</strong></h3>
-<p>The ESP32 microcontroller is the core of this subsystem, providing Wi-Fi connectivity and the processing power needed to gather and transmit sensor data.</p>
+<p>The ESP32 microcontroller serves as the core of this subsystem, offering built-in Wi-Fi connectivity and the processing power necessary for sensor data acquisition and transmission.</p>
 <table>
 <thead>
 <tr>
@@ -747,10 +747,10 @@
 </tbody>
 </table>
 <p><strong>Final Selection: ESP32-S3-WROOM-1-N4</strong><br />
-<em>Rationale:</em> The ESP32-S3-WROOM-1-N4 was selected due to its robust Wi-Fi capabilities, dual-core processor for multitasking, and compatibility with I2C/SPI protocols required for sensor interfacing. Its low power consumption and extensive library support make it ideal for real-time data transmission.</p>
+The ESP32-S3-WROOM-1-N4 was chosen for its robust Wi-Fi capabilities, dual-core processor for multitasking, and compatibility with I2C/SPI interfaces required for sensor integration. Its low power consumption and extensive library support make it ideal for real-time data processing and transmission.</p>
 <hr />
 <h3 id="power-regulation"><strong>Power Regulation</strong></h3>
-<p>To ensure stable operation of the ESP32 and sensors, a voltage regulator is required to step down the input voltage to 3.3V.</p>
+<p>A voltage regulator is required to step down the input voltage to 3.3V, ensuring stable operation for the ESP32 and connected sensors.</p>
 <table>
 <thead>
 <tr>
@@ -782,17 +782,23 @@
 </tbody>
 </table>
 <p><strong>Final Selection: HT7333</strong><br />
-<em>Rationale:</em> The AMS1117-3.3 was selected as the optimal voltage regulator for this subsystem due to its low cost, simplicity, compatibility with surface-mount requirements, and ability to meet the current demands of the ESP32 microcontroller and connected sensors.</p>
+The AMS1117-3.3 was chosen for its low cost, ease of implementation, and compatibility with surface-mount applications. It efficiently meets the current requirements of the ESP32 and connected peripherals.</p>
 <hr />
 <h3 id="power-input"><strong>Power Input</strong></h3>
 <p>The subsystem requires a reliable power source capable of providing sufficient current for the ESP32 and sensors.</p>
 <p><strong>Final Selection: DC Barrel Jack Adapter</strong><br />
-<em>Rationale:</em> A DC barrel jack adapter was selected for its simplicity and ability to provide stable power from a wall adapter or external supply. This ensures consistent operation during extended use.</p>
+A DC barrel jack adapter was selected due to its reliability, ease of connection, and ability to deliver consistent power from an external adapter, ensuring uninterrupted operation.</p>
 <hr />
 <h2 id="additional-components-to-enhance-subsystem"><strong>Additional Components to Enhance Subsystem</strong></h2>
 <p>To improve functionality and robustness, the following additional components are recommended:</p>
 <ol>
-<li><strong>Capacitors (Decoupling):</strong></li>
+<li><strong>Boot and Enable Buttons</strong></li>
+<li>
+<p>Include Boot and Enable buttons with a pull up resistor.</p>
+</li>
+<li>
+<p><strong>Capacitors (Decoupling):</strong></p>
+</li>
 <li>
 <p>Add 10µF and 0.1µF capacitors near the ESP32 and voltage regulator to reduce noise and stabilize voltage.</p>
 </li>
@@ -803,24 +809,18 @@
 <p>Ensure compatibility between sensors operating at 5V logic levels and the ESP32's 3.3V GPIO pins.</p>
 </li>
 <li>
-<p><strong>Heat Sink (Optional):</strong></p>
-</li>
-<li>
-<p>Improve thermal performance of the voltage regulator during extended operation.</p>
-</li>
-<li>
 <p><strong>LED Indicators:</strong></p>
 </li>
 <li>Include LEDs for power status and Wi-Fi activity to aid debugging.</li>
 </ol>
 <hr />
-<h2 id="responsibilities"><strong>Responsibilities</strong></h2>
+<h2 id="responsibilities-for-the-subsystem"><strong>Responsibilities for the subsystem</strong></h2>
 <ol>
 <li><strong>Data Collection:</strong> Interface with all sensors in the system using I2C/SPI/UART protocols.</li>
 <li><strong>Wi-Fi Communication:</strong> Use the ESP32's built-in Wi-Fi module to create a local network and transmit sensor data.</li>
 <li><strong>Power Management:</strong> Regulate input voltage using an AMS1117-3.3 regulator to ensure a stable 3.3V supply.</li>
-<li><strong>Data Transmission:</strong> Continuously update sensor readings on a GitHub-hosted webpage in real time.</li>
-<li><strong>Integration:</strong> Ensure seamless compatibility between sensors and the microcontroller through proper pin allocation and library selection.</li>
+<li><strong>Data Transmission:</strong> Continuously update sensor readings on a the OLED display</li>
+<li><strong>Integration:</strong> Ensure seamless compatibility between sensors, motors and the microcontroller through proper pin allocation and library selection.</li>
 </ol>
 <hr />
 <h2 id="pin-allocation"><strong>Pin Allocation</strong></h2>
@@ -835,15 +835,15 @@
 <tbody>
 <tr>
 <td>I2C SDA</td>
-<td>GPIO21</td>
+<td>GPIO20</td>
 </tr>
 <tr>
 <td>I2C SCL</td>
-<td>GPIO22</td>
+<td>GPIO21</td>
 </tr>
 <tr>
 <td>SPI MOSI</td>
-<td>GPIO23</td>
+<td>GPIO24</td>
 </tr>
 <tr>
 <td>SPI MISO</td>
@@ -865,7 +865,7 @@
 </table>
 <hr />
 <h2 id="conclusion"><strong>Conclusion</strong></h2>
-<p>The selected components ensure efficient integration of all sensors with the ESP32 microcontroller while meeting project specifications for real-time data collection and transmission to a GitHub-hosted webpage.</p>
+<p>The selected components ensure efficient sensor integration with the ESP32 microcontroller while meeting system requirements for real-time data acquisition and wireless transmission. By incorporating proper power regulation, reliable Wi-Fi communication, and auxiliary enhancements, this subsystem is optimized for robust and continuous operation.</p>
 
 
 
