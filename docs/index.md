@@ -10,7 +10,7 @@ Team Website: [Click Here!](https://ethan-s-team-314.github.io/Team-Organization
 ## Home
 
 [Block Diagram](./block-diagram.md)  
-[Component Selection](./component-selection.md)  
+[Component Selection](./component_selection.md)  
 [Schematic & Bill of Materials](./schematic.md)
 
 ## About Me
