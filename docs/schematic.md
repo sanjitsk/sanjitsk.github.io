@@ -3,7 +3,7 @@ This schematic outlines the design of a subsystem centered around the ESP32-S3-W
 
 ## Schematic Diagram
 Here is the Schematic for Internet Communication Subsystem:
-![Stage 1: Ideation](./subfolder/schematic.png)
+![Stage 1: Ideation](./docs/subfolder/revision_1.png)
 
 ## Schematic Files
 
