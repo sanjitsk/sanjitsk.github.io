@@ -24,7 +24,8 @@ The ESP32 microcontroller serves as the core of this subsystem, offering built-i
 | ESP8266                  | Low cost, simple to use                                                 | Limited GPIO pins, no dual-core processor                      | [$1.60 DigiKey](https://www.digikey.com/en/products/detail/espressif-systems/ESP8266EX/8028401) |
 | Raspberry Pi Pico W      | Dual-core processor, Wi-Fi support                                      | Higher power consumption, larger physical size                 | [$6.00 DigiKey](https://www.digikey.com/en/products/detail/raspberry-pi/SC0918/16627943) |
 
-**Final Selection: ESP32-S3-WROOM-1-N4**  
+**Final Selection:**
+![ESP32-S3-WROOM-1-N4](./subfolder/esp32.png)
 The ESP32-S3-WROOM-1-N4 was chosen for its robust Wi-Fi capabilities, dual-core processor for multitasking, and compatibility with I2C/SPI interfaces required for sensor integration. Its low power consumption and extensive library support make it ideal for real-time data processing and transmission.
 
 ---
@@ -38,7 +39,8 @@ A voltage regulator is required to step down the input voltage to 3.3V, ensuring
 | LM2596                | High efficiency                                          | Larger physical size                      | [$6.70 DigiKey](https://www.digikey.com/en/products/detail/texas-instruments/LM2596S-ADJ-NOPB/363705) |
 | HT7333    | Ultra-low quiescent current                              | Limited current output                    | [$0.65 DigiKey](https://www.digikey.com/en/products/detail/umw/HT7333-A/17635230) |
 
-**Final Selection: HT7333**  
+**Final Selection:**
+![AMS1117-3.3](./subfolder/vregulator.png)
 The AMS1117-3.3 was chosen for its low cost, ease of implementation, and compatibility with surface-mount applications. It efficiently meets the current requirements of the ESP32 and connected peripherals.
 
 ---
