@@ -1,108 +1,120 @@
 ---
 title: Component Selection
 tags:
-- tag1
-- tag2
+  - tag1
+  - tag2
 ---
 
-# Subsystem Documentation: Wi-Fi-Enabled Data Collection and Transmission
+# Wi-Fi-Enabled Data Collection and Transmission Subsystem
 
-## **Introduction**
-As part of our embedded systems design project, this subsystem is responsible for acquiring sensor data, transmitting it over a Wi-Fi network established by the ESP32 microcontroller, and updating a GitHub-hosted webpage in real time. This document details the component selection process, focusing on efficient power regulation, reliable wireless communication, and seamless sensor integration.
+## **Overview**
 
+In this embedded systems design project, we focus on building a subsystem capable of collecting sensor data, transmitting it over a Wi-Fi network managed by the ESP32 microcontroller, and updating a real-time webpage hosted on GitHub. This document provides an in-depth look into the component selection process, emphasizing efficient power regulation, dependable wireless communication, and seamless sensor integration.
 
 ---
 
-## **Major Component Selections**
+## **Component Selection**
 
-### **Microcontroller Selection**
-The ESP32 microcontroller serves as the core of this subsystem, offering built-in Wi-Fi connectivity and the processing power necessary for sensor data acquisition and transmission.
+### **Microcontroller**
 
-| **Option**               | **Pros**                                                                 | **Cons**                                                       | **Unit Cost & Link**                                                                 |
-|---------------------------|-------------------------------------------------------------------------|----------------------------------------------------------------|-------------------------------------------------------------------------------------|
-| **ESP32-S3-WROOM-1-N4 (Final Choice)**  | Built-in Wi-Fi/Bluetooth, supports I2C/SPI/UART, low power modes, 4MB Flash | 3.3V logic may require level shifters for some peripherals      | [$2.95 DigiKey](https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-WROOM-1-N4/16162639) |
-| ESP8266                  | Low cost, simple to use                                                 | Limited GPIO pins, no dual-core processor                      | [$1.60 DigiKey](https://www.digikey.com/en/products/detail/espressif-systems/ESP8266EX/8028401) |
-| Raspberry Pi Pico W      | Dual-core processor, Wi-Fi support                                      | Higher power consumption, larger physical size                 | [$6.00 DigiKey](https://www.digikey.com/en/products/detail/raspberry-pi/SC0918/16627943) |
+For the heart of our subsystem, we’ve chosen the **ESP32 microcontroller**. Its built-in Wi-Fi connectivity, processing capabilities, and flexibility make it the perfect choice for our project, handling both sensor data acquisition and transmission efficiently.
 
-**Final Selection:**
+| **Option**               | **Advantages**                                                | **Disadvantages**                                     | **Cost & Link**                                                                      |
+|--------------------------|---------------------------------------------------------------|------------------------------------------------------|--------------------------------------------------------------------------------------|
+| **ESP32-S3-WROOM-1-N4**  | Built-in Wi-Fi/Bluetooth, supports I2C/SPI/UART, low power modes, 4MB Flash | 3.3V logic may require level shifters for certain peripherals | [$2.95 DigiKey](https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-WROOM-1-N4/16162639) |
+| ESP8266                  | Affordable, simple to use                                     | Limited GPIO pins, lacks dual-core processor         | [$1.60 DigiKey](https://www.digikey.com/en/products/detail/espressif-systems/ESP8266EX/8028401) |
+| Raspberry Pi Pico W      | Dual-core, built-in Wi-Fi                                    | Higher power usage, larger physical size             | [$6.00 DigiKey](https://www.digikey.com/en/products/detail/raspberry-pi/SC0918/16627943) |
+
+**Choice:**  
+We selected the **ESP32-S3-WROOM-1-N4** due to its superior Wi-Fi capabilities, dual-core processor for multitasking, and compatibility with sensor interfaces like I2C and SPI. Its low power consumption and comprehensive library support make it ideal for real-time data processing and transmission.
+
 ![ESP32-S3-WROOM-1-N4](./subfolder/esp32.png)
-
-
-The ESP32-S3-WROOM-1-N4 was chosen for its robust Wi-Fi capabilities, dual-core processor for multitasking, and compatibility with I2C/SPI interfaces required for sensor integration. Its low power consumption and extensive library support make it ideal for real-time data processing and transmission.
 
 ---
 
 ### **Power Regulation**
-A voltage regulator is required to step down the input voltage to 3.3V, ensuring stable operation for the ESP32 and connected sensors.
 
-| **Option**           | **Pros**                                                  | **Cons**                                   | **Unit Cost & Link**                                                                 |
-|-----------------------|----------------------------------------------------------|-------------------------------------------|-------------------------------------------------------------------------------------|
-| **AMS1117-3.3 (Final Choice)**         | Simple design                                            | Low efficiency                            | [$0.68 DigiKey](https://www.digikey.com/en/products/detail/umw/AMS1117-3-3/17635254) |
-| LM2596                | High efficiency                                          | Larger physical size                      | [$6.70 DigiKey](https://www.digikey.com/en/products/detail/texas-instruments/LM2596S-ADJ-NOPB/363705) |
-| HT7333    | Ultra-low quiescent current                              | Limited current output                    | [$0.65 DigiKey](https://www.digikey.com/en/products/detail/umw/HT7333-A/17635230) |
+To ensure stable operation of the ESP32 and connected sensors, we require a voltage regulator that steps down the input voltage to a steady 3.3V.
 
-**Final Selection:**
+| **Option**           | **Advantages**                                       | **Disadvantages**                        | **Cost & Link**                                                                  |
+|----------------------|------------------------------------------------------|----------------------------------------|----------------------------------------------------------------------------------|
+| **AMS1117-3.3**      | Simple design, low cost                              | Low efficiency                         | [$0.68 DigiKey](https://www.digikey.com/en/products/detail/umw/AMS1117-3-3/17635254) |
+| LM2596               | High efficiency, more robust                        | Larger size                            | [$6.70 DigiKey](https://www.digikey.com/en/products/detail/texas-instruments/LM2596S-ADJ-NOPB/363705) |
+| HT7333               | Ultra-low quiescent current                          | Limited current output                 | [$0.65 DigiKey](https://www.digikey.com/en/products/detail/umw/HT7333-A/17635230) |
+
+**Choice:**  
+The **AMS1117-3.3** was chosen for its simplicity, affordability, and compatibility with surface-mount applications. It adequately meets the power needs of the ESP32 and associated peripherals.
+
 ![AMS1117-3.3](./subfolder/vregulator.png)
-
-
-The AMS1117-3.3 was chosen for its low cost, ease of implementation, and compatibility with surface-mount applications. It efficiently meets the current requirements of the ESP32 and connected peripherals.
 
 ---
 
 ### **Power Input**
-The subsystem requires a reliable power source capable of providing sufficient current for the ESP32 and sensors.
 
+To provide consistent power for the ESP32 and sensors, we need a reliable input source.
 
-**Final Selection: DC Barrel Jack Adapter**  
-A DC barrel jack adapter was selected due to its reliability, ease of connection, and ability to deliver consistent power from an external adapter, ensuring uninterrupted operation.
-
-
+**Choice:**  
+A **DC Barrel Jack Adapter** was chosen for its reliable performance, ease of connection, and ability to supply stable power from an external adapter, ensuring uninterrupted subsystem operation.
 
 ---
 
-## **Additional Components to Enhance Subsystem**
-To improve functionality and robustness, the following additional components are recommended:
+## **Additional Recommended Components**
 
-1. **Boot and Enable Buttons**
-   - Include Boot and Enable buttons with a pull up resistor.
+For enhanced functionality and robustness, the following components are recommended:
 
-2. **Capacitors (Decoupling):**
-   - Add 10µF and 0.1µF capacitors near the ESP32 and voltage regulator to reduce noise and stabilize voltage.
+1. **Boot and Enable Buttons:**  
+   - Add pull-up resistors with Boot and Enable buttons for easier troubleshooting.
    
-3. **Level Shifters:**
-   - Ensure compatibility between sensors operating at 5V logic levels and the ESP32's 3.3V GPIO pins.
+2. **Capacitors (Decoupling):**  
+   - 10µF and 0.1µF capacitors to stabilize voltage and reduce noise near the ESP32 and voltage regulator.
 
-4. **LED Indicators:**
-   - Include LEDs for power status and Wi-Fi activity to aid debugging.
+3. **Level Shifters:**  
+   - Ensure compatibility between sensors operating at 5V logic and the ESP32's 3.3V GPIO pins.
 
-
----
-
-## **Responsibilities for the subsystem**
-
-1. **Data Collection:** Interface with all sensors in the system using I2C/SPI/UART protocols.
-2. **Wi-Fi Communication:** Use the ESP32's built-in Wi-Fi module to create a local network and transmit sensor data.
-3. **Power Management:** Regulate input voltage using an AMS1117-3.3 regulator to ensure a stable 3.3V supply.
-4. **Data Transmission:** Continuously update sensor readings on a the OLED display
-5. **Integration:** Ensure seamless compatibility between sensors, motors and the microcontroller through proper pin allocation and library selection.
+4. **LED Indicators:**  
+   - Incorporate LEDs to monitor power status and Wi-Fi activity for better debugging.
 
 ---
 
-## **Pin Allocation**
+## **Subsystem Responsibilities**
 
-### ESP32 Peripheral Pin Assignments:
-| Peripheral      | Pin Assignment       |
-|------------------|----------------------|
-| I2C SDA          | GPIO20              |
-| I2C SCL          | GPIO21             |
-| SPI MOSI         | GPIO24              |
-| SPI MISO         | GPIO19              |
-| SPI SCLK         | GPIO18              |
-| UART TX/RX       | Debugging Pins      |
-| Power Input      | VIN via DC Barrel Jack |
+The key tasks for this subsystem include:
+
+1. **Data Collection:**  
+   - Interface with sensors using I2C, SPI, or UART protocols.
+   
+2. **Wi-Fi Communication:**  
+   - Use the ESP32's built-in Wi-Fi to create a local network and transmit data.
+
+3. **Power Management:**  
+   - Regulate voltage with the AMS1117-3.3 to maintain a stable 3.3V supply.
+
+4. **Data Transmission:**  
+   - Update sensor readings on a real-time OLED display.
+
+5. **Integration:**  
+   - Ensure seamless compatibility between the sensors, motors, and microcontroller using correct pin assignments and libraries.
+
+---
+
+## **Pin Assignments**
+
+### ESP32 Pin Configuration:
+
+| **Peripheral**       | **Pin Assignment**   |
+|----------------------|----------------------|
+| I2C SDA              | GPIO20               |
+| I2C SCL              | GPIO21               |
+| SPI MOSI             | GPIO24               |
+| SPI MISO             | GPIO19               |
+| SPI SCLK             | GPIO18               |
+| UART TX/RX           | Debugging Pins       |
+| Power Input          | VIN (via DC Barrel Jack) |
 
 ---
 
 ## **Conclusion**
 
-The selected components ensure efficient sensor integration with the ESP32 microcontroller while meeting system requirements for real-time data acquisition and wireless transmission. By incorporating proper power regulation, reliable Wi-Fi communication, and auxiliary enhancements, this subsystem is optimized for robust and continuous operation.
+The selected components provide a reliable and efficient design for the data collection and transmission subsystem. By incorporating proper power regulation, dependable Wi-Fi communication, and necessary peripheral enhancements, this subsystem is well-suited for continuous, real-time operation in our embedded systems project.
+
+---
