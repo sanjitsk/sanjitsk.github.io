@@ -26,6 +26,8 @@ The ESP32 microcontroller serves as the core of this subsystem, offering built-i
 
 **Final Selection:**
 ![ESP32-S3-WROOM-1-N4](./subfolder/esp32.png)
+
+
 The ESP32-S3-WROOM-1-N4 was chosen for its robust Wi-Fi capabilities, dual-core processor for multitasking, and compatibility with I2C/SPI interfaces required for sensor integration. Its low power consumption and extensive library support make it ideal for real-time data processing and transmission.
 
 ---
@@ -41,6 +43,8 @@ A voltage regulator is required to step down the input voltage to 3.3V, ensuring
 
 **Final Selection:**
 ![AMS1117-3.3](./subfolder/vregulator.png)
+
+
 The AMS1117-3.3 was chosen for its low cost, ease of implementation, and compatibility with surface-mount applications. It efficiently meets the current requirements of the ESP32 and connected peripherals.
 
 ---
