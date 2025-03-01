@@ -19,8 +19,8 @@ The following components are essential for the successful completion of the proj
 > **Note:** Some components are available in stock at Peralta 109 and do not need to be ordered.
 
 ## **Download Full BOM Google Sheet**
-[📎 BOM (G-Sheet](https://docs.google.com/spreadsheets/d/1Lty8mTdRefT_vAFwkvvfCRsP3DJ18b6C/edit?usp=sharing&ouid=101291518142862283716&rtpof=true&sd=true)
-[📎 Purchase Request (G-Sheet](https://docs.google.com/spreadsheets/d/1erS42jfHQJueBSrKlp_hZEIR4DH4sWFf/edit?usp=sharing&ouid=101291518142862283716&rtpof=true&sd=true)
+[📎 BOM (G-Sheet)](https://docs.google.com/spreadsheets/d/1Lty8mTdRefT_vAFwkvvfCRsP3DJ18b6C/edit?usp=sharing&ouid=101291518142862283716&rtpof=true&sd=true)
+[📎 Purchase Request (G-Sheet)](https://docs.google.com/spreadsheets/d/1erS42jfHQJueBSrKlp_hZEIR4DH4sWFf/edit?usp=sharing&ouid=101291518142862283716&rtpof=true&sd=true)
 
 ## Rationale for Selection
 Each component was selected based on its compatibility with the designed system, availability, and cost-effectiveness. Additional spare components were ordered to account for potential damage during assembly and testing.
@@ -34,5 +34,5 @@ Each component was selected based on its compatibility with the designed system,
 
 ## Conclusion
 This BOM ensures that all necessary components are accounted for and easily accessible, allowing for smooth project execution and debugging.
----
+
 
