@@ -8,12 +8,12 @@ Here is the Schematic for Internet Communication Subsystem:
 ## Schematic Files
 
 ### 📄 PDF Version  
-[📎 View Schematic (PDF)](https://drive.google.com/file/d/1_nQq1XITIq_VuZgxU-aooXvd6ZK00ZMX/view?usp=sharing)
+[📎 View Schematic (PDF)](https://drive.google.com/file/d/19p1NFBSk2UhZRfJioDkgkhMt03NoEjyA/view?usp=sharing)
 
 ### 🖼️ Image Preview  
-![Schematic Preview](docs/schematic.png)
+![Schematic Preview](https://drive.google.com/file/d/1kL5tBVHw2xXIH6hcBwY8y8kJnyidDkUX/view?usp=sharing)
 
 ### 📁 Source Files (ZIP)  
-[📥 Download Schematic Files](https://drive.google.com/file/d/15IpONTE-EmsckBEL_MQ3iigdeJClUABM/view?usp=sharing)
+[📥 Download Schematic Files](https://drive.google.com/file/d/1qdzW3ngdSnSj2UcJSFZVx_Thxpd3Bvdq/view?usp=sharing)
 
 
