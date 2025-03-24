@@ -29,7 +29,7 @@
 
     
       
-        <title>Api - SANJIT's INDIVIDUAL WEBPAGE</title>
+        <title>MQTT Subsystem UART Communication - SANJIT's INDIVIDUAL WEBPAGE</title>
       
     
     
@@ -92,6 +92,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#mqtt-subsystem-uart-communication" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -123,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Api
+              MQTT Subsystem UART Communication
             
           </span>
         </div>
@@ -238,7 +243,7 @@
   
     
   
-  Api
+  MQTT Subsystem UART Communication
 
       </a>
     </li>
@@ -433,16 +438,150 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    MQTT Subsystem UART Communication
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Api
+    MQTT Subsystem UART Communication
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-overview" class="md-nav__link">
+    Message Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#soil-moisture-value" class="md-nav__link">
+    Soil Moisture Value
+  </a>
+  
+    <nav class="md-nav" aria-label="Soil Moisture Value">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#receive-format" class="md-nav__link">
+    Receive Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transmit-format" class="md-nav__link">
+    Transmit Format
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motor-pump-value" class="md-nav__link">
+    Motor Pump Value
+  </a>
+  
+    <nav class="md-nav" aria-label="Motor Pump Value">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#receive-format_1" class="md-nav__link">
+    Receive Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transmit-format_1" class="md-nav__link">
+    Transmit Format
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#temperature-humidity-value" class="md-nav__link">
+    Temperature &amp; Humidity Value
+  </a>
+  
+    <nav class="md-nav" aria-label="Temperature & Humidity Value">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#receive-format_2" class="md-nav__link">
+    Receive Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transmit-format_2" class="md-nav__link">
+    Transmit Format
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-the-data-flow-in-the-daisy-chain" class="md-nav__link">
+    Summary of the Data Flow in the Daisy Chain
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -584,6 +723,118 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-overview" class="md-nav__link">
+    Message Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#soil-moisture-value" class="md-nav__link">
+    Soil Moisture Value
+  </a>
+  
+    <nav class="md-nav" aria-label="Soil Moisture Value">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#receive-format" class="md-nav__link">
+    Receive Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transmit-format" class="md-nav__link">
+    Transmit Format
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motor-pump-value" class="md-nav__link">
+    Motor Pump Value
+  </a>
+  
+    <nav class="md-nav" aria-label="Motor Pump Value">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#receive-format_1" class="md-nav__link">
+    Receive Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transmit-format_1" class="md-nav__link">
+    Transmit Format
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#temperature-humidity-value" class="md-nav__link">
+    Temperature &amp; Humidity Value
+  </a>
+  
+    <nav class="md-nav" aria-label="Temperature & Humidity Value">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#receive-format_2" class="md-nav__link">
+    Receive Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transmit-format_2" class="md-nav__link">
+    Transmit Format
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-the-data-flow-in-the-daisy-chain" class="md-nav__link">
+    Summary of the Data Flow in the Daisy Chain
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -606,9 +857,322 @@
   
 
 
-  <h1>Api</h1>
-
-
+<h1 id="mqtt-subsystem-uart-communication">MQTT Subsystem UART Communication</h1>
+<h2 id="introduction">Introduction</h2>
+<p>The MQTT subsystem is at the end of the UART daisy chain, so my main process will be to pass on the messages I receive back to the beginning of the chain. I will be using the data I receive on the WiFi server, but the MQTT communication will be outlined on a different page than this one. This page will only focus on the UART communications for the smart irrigation system.</p>
+<h2 id="message-overview">Message Overview</h2>
+<table>
+<thead>
+<tr>
+<th>Message</th>
+<th>Variable Name</th>
+<th>Variable Type</th>
+<th>Min Value</th>
+<th>Max Value</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Message 1</td>
+<td>Soil_Moisture_Value</td>
+<td>uint8_t</td>
+<td>0</td>
+<td>255</td>
+<td>120</td>
+</tr>
+<tr>
+<td>Message 2</td>
+<td>Motor_Pump_Value</td>
+<td>uint8_t</td>
+<td>0</td>
+<td>255</td>
+<td>180</td>
+</tr>
+<tr>
+<td>Message 3</td>
+<td>Temp_Humidity_Value</td>
+<td>uint8_t</td>
+<td>0</td>
+<td>255</td>
+<td>85</td>
+</tr>
+</tbody>
+</table>
+<p>I will be receiving three different data values from upstream:
+- <strong>Soil moisture sensor data</strong> (from my ESP32).
+- <strong>Bi-directional motor pump status</strong> (from a PIC microcontroller).
+- <strong>Temperature &amp; humidity sensor data</strong> (from another ESP32).</p>
+<p>These values will be uploaded to the WiFi server and then passed along the chain to the LCD display subsystem, ensuring the data is available to all team members. This means that all messages will be both received and transmitted.</p>
+<h2 id="soil-moisture-value">Soil Moisture Value</h2>
+<h3 id="receive-format">Receive Format</h3>
+<table>
+<thead>
+<tr>
+<th>Byte</th>
+<th>Byte Name</th>
+<th>Byte Type</th>
+<th>Byte Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Start</td>
+<td>uint8_t</td>
+<td>0x41</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sender</td>
+<td>uint8_t</td>
+<td>0x03</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Receiver</td>
+<td>uint8_t</td>
+<td>0x05</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Soil_Moisture_Value</td>
+<td>uint8_t</td>
+<td>Sensor Byte</td>
+</tr>
+<tr>
+<td>5</td>
+<td>End</td>
+<td>uint8_t</td>
+<td>0x42</td>
+</tr>
+</tbody>
+</table>
+<h3 id="transmit-format">Transmit Format</h3>
+<table>
+<thead>
+<tr>
+<th>Byte</th>
+<th>Byte Name</th>
+<th>Byte Type</th>
+<th>Byte Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Start</td>
+<td>uint8_t</td>
+<td>0x41</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sender</td>
+<td>uint8_t</td>
+<td>0x05</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Receiver</td>
+<td>uint8_t</td>
+<td>0x04</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Soil_Moisture_Value</td>
+<td>uint8_t</td>
+<td>Sensor Byte</td>
+</tr>
+<tr>
+<td>5</td>
+<td>End</td>
+<td>uint8_t</td>
+<td>0x42</td>
+</tr>
+</tbody>
+</table>
+<h2 id="motor-pump-value">Motor Pump Value</h2>
+<h3 id="receive-format_1">Receive Format</h3>
+<table>
+<thead>
+<tr>
+<th>Byte</th>
+<th>Byte Name</th>
+<th>Byte Type</th>
+<th>Byte Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Start</td>
+<td>uint8_t</td>
+<td>0x41</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sender</td>
+<td>uint8_t</td>
+<td>0x03</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Receiver</td>
+<td>uint8_t</td>
+<td>0x05</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Motor_Pump_Value</td>
+<td>uint8_t</td>
+<td>Motor Byte</td>
+</tr>
+<tr>
+<td>5</td>
+<td>End</td>
+<td>uint8_t</td>
+<td>0x42</td>
+</tr>
+</tbody>
+</table>
+<h3 id="transmit-format_1">Transmit Format</h3>
+<table>
+<thead>
+<tr>
+<th>Byte</th>
+<th>Byte Name</th>
+<th>Byte Type</th>
+<th>Byte Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Start</td>
+<td>uint8_t</td>
+<td>0x41</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sender</td>
+<td>uint8_t</td>
+<td>0x05</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Receiver</td>
+<td>uint8_t</td>
+<td>0x04</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Motor_Pump_Value</td>
+<td>uint8_t</td>
+<td>Motor Byte</td>
+</tr>
+<tr>
+<td>5</td>
+<td>End</td>
+<td>uint8_t</td>
+<td>0x42</td>
+</tr>
+</tbody>
+</table>
+<h2 id="temperature-humidity-value">Temperature &amp; Humidity Value</h2>
+<h3 id="receive-format_2">Receive Format</h3>
+<table>
+<thead>
+<tr>
+<th>Byte</th>
+<th>Byte Name</th>
+<th>Byte Type</th>
+<th>Byte Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Start</td>
+<td>uint8_t</td>
+<td>0x41</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sender</td>
+<td>uint8_t</td>
+<td>0x03</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Receiver</td>
+<td>uint8_t</td>
+<td>0x05</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Temp_Humidity_Value</td>
+<td>uint8_t</td>
+<td>Sensor Byte</td>
+</tr>
+<tr>
+<td>5</td>
+<td>End</td>
+<td>uint8_t</td>
+<td>0x42</td>
+</tr>
+</tbody>
+</table>
+<h3 id="transmit-format_2">Transmit Format</h3>
+<table>
+<thead>
+<tr>
+<th>Byte</th>
+<th>Byte Name</th>
+<th>Byte Type</th>
+<th>Byte Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Start</td>
+<td>uint8_t</td>
+<td>0x41</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sender</td>
+<td>uint8_t</td>
+<td>0x05</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Receiver</td>
+<td>uint8_t</td>
+<td>0x04</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Temp_Humidity_Value</td>
+<td>uint8_t</td>
+<td>Sensor Byte</td>
+</tr>
+<tr>
+<td>5</td>
+<td>End</td>
+<td>uint8_t</td>
+<td>0x42</td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary-of-the-data-flow-in-the-daisy-chain">Summary of the Data Flow in the Daisy Chain</h2>
+<ol>
+<li><strong>My ESP32</strong> collects soil moisture data and sends it via UART.</li>
+<li><strong>The LCD ESP32</strong> displays this data and passes it along.</li>
+<li><strong>The PIC (Motor Pump Controller)</strong> receives motor commands and transmits pump status.</li>
+<li><strong>The Temperature &amp; Humidity ESP32</strong> sends its sensor data.</li>
+<li><strong>The entire chain loops back to me</strong>, ensuring the data is properly cycled through all subsystems.</li>
+</ol>
 
 
 
