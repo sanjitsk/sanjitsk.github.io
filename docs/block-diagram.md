@@ -11,7 +11,7 @@ permalink: /block-diagram/
 This page presents the block diagram for the Wi-Fi/Internet Communication Subsystem, featuring debugging LEDs for the MQTT server, RX and TX indicators, a voltage regulator, and upstream/downstream connectors. The entire subsystem is managed by the ESP32-S3-WROOM-N4.
 
 ## Block Diagram Preview  
-![Block Diagram](./subfolder/blockdiagram.png)
+![Block Diagram](./subfolder/blockdiagram_(2).png)
 
 ## Download the Block Diagram  
 [Draw.io Block Digram View](https://drive.google.com/file/d/1Zu_ZALLJ08QVjuWkUUsSZqnZJdQ2op89/view?usp=sharing)
