@@ -5,6 +5,7 @@ title: Welcome
 Name: Sanjit Selvakumar Kavitha  
 Class: EGR314 - 12:00PM Monday/Wednesday  
 Professor: Dr. Kevin Nichols
+
 Team Website: [Click Here!](https://ethan-s-team-314.github.io/Team-Organization-and-Charter/)
 
 ## Home
