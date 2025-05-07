@@ -29,7 +29,7 @@
 
     
       
-        <title>Power budget - SANJIT's INDIVIDUAL WEBPAGE</title>
+        <title>Power Budget Calculation - SANJIT's INDIVIDUAL WEBPAGE</title>
       
     
     
@@ -92,6 +92,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#power-budget-calculation" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -123,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Power budget
+              Power Budget Calculation
             
           </span>
         </div>
@@ -289,7 +294,7 @@
   
     
   
-  Power budget
+  Power Budget Calculation
 
       </a>
     </li>
@@ -524,16 +529,69 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Power Budget Calculation
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Power budget
+    Power Budget Calculation
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#power-formula-used" class="md-nav__link">
+    Power Formula Used
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-budget-table" class="md-nav__link">
+    Power Budget Table
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#total-estimated-power-budget" class="md-nav__link">
+    Total Estimated Power Budget
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -656,6 +714,37 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#power-formula-used" class="md-nav__link">
+    Power Formula Used
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-budget-table" class="md-nav__link">
+    Power Budget Table
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#total-estimated-power-budget" class="md-nav__link">
+    Total Estimated Power Budget
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -678,9 +767,127 @@
   
 
 
-  <h1>Power budget</h1>
-
-
+<h1 id="power-budget-calculation">Power Budget Calculation</h1>
+<h2 id="power-formula-used">Power Formula Used</h2>
+<p>[
+P = V \times I
+]
+where:<br />
+- <strong>P</strong> = Power in watts (W)<br />
+- <strong>V</strong> = Voltage in volts (V)<br />
+- <strong>I</strong> = Current in amperes (A)  </p>
+<hr />
+<h2 id="power-budget-table">Power Budget Table</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Component</strong></th>
+<th><strong>Quantity</strong></th>
+<th><strong>Voltage (V)</strong></th>
+<th><strong>Current (A) per unit</strong></th>
+<th><strong>Power (W) per unit</strong></th>
+<th><strong>Total Power (W)</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LEDs (WL-SMCC SMT Mono-color Chip LED)</strong></td>
+<td>5</td>
+<td>2V</td>
+<td>10mA (0.01A)</td>
+<td><code>2V × 0.01A = 0.02W</code></td>
+<td><code>5 × 0.02 = 0.1W</code></td>
+<td>Assumed 2V, 10mA each</td>
+</tr>
+<tr>
+<td><strong>Schottky Diode (SOD-323)</strong></td>
+<td>1</td>
+<td>0.3V drop</td>
+<td>1A</td>
+<td><code>0.3V × 1A = 0.3W</code></td>
+<td><code>0.3W</code></td>
+<td>Power dissipation</td>
+</tr>
+<tr>
+<td><strong>Fuse (2.5A 125VAC/VDC SMD)</strong></td>
+<td>1</td>
+<td>-</td>
+<td>-</td>
+<td><code>0W</code></td>
+<td><code>0W</code></td>
+<td>No power unless tripped</td>
+</tr>
+<tr>
+<td><strong>ESP32-S3-WROOM-1-N4_SKS</strong></td>
+<td>1</td>
+<td>3.3V</td>
+<td>150mA (0.15A)</td>
+<td><code>3.3V × 0.15A = 0.495W</code></td>
+<td><code>0.5W</code></td>
+<td>Can peak at ~1W</td>
+</tr>
+<tr>
+<td><strong>AP63203WU-7 (Buck Converter)</strong></td>
+<td>1</td>
+<td>3.3V Output</td>
+<td>2A</td>
+<td><code>3.3V × 2A = 6.6W</code></td>
+<td><code>6.6W / 0.85 = 7.8W</code></td>
+<td>Efficiency ~85%, input power calculated</td>
+</tr>
+<tr>
+<td><strong>Resistors (10kΩ)</strong></td>
+<td>6</td>
+<td>3.3V</td>
+<td><code>3.3V / 10kΩ = 0.33mA</code></td>
+<td><code>3.3V × 0.00033A = 0.0011W</code></td>
+<td><code>6 × 0.0011 = 0.0066W</code></td>
+<td>Negligible</td>
+</tr>
+<tr>
+<td><strong>Resistors (330Ω)</strong></td>
+<td>5</td>
+<td>3.3V</td>
+<td><code>3.3V / 330Ω = 10mA (0.01A)</code></td>
+<td><code>3.3V × 0.01A = 0.033W</code></td>
+<td><code>5 × 0.033 = 0.165W</code></td>
+<td>Power dissipation</td>
+</tr>
+<tr>
+<td><strong>Push Button Switches</strong></td>
+<td>2</td>
+<td>-</td>
+<td>-</td>
+<td><code>~0W</code></td>
+<td><code>~0W</code></td>
+<td>Minimal power usage</td>
+</tr>
+<tr>
+<td><strong>Micro USB Connector</strong></td>
+<td>1</td>
+<td>-</td>
+<td>-</td>
+<td><code>0W</code></td>
+<td><code>0W</code></td>
+<td>No inherent power consumption</td>
+</tr>
+<tr>
+<td><strong>Inductor (3.9µH)</strong></td>
+<td>1</td>
+<td>-</td>
+<td>-</td>
+<td><code>0W</code></td>
+<td><code>0W</code></td>
+<td>Passive component</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="total-estimated-power-budget">Total Estimated Power Budget</h2>
+<div class="arithmatex">\[
+0.1 + 0.3 + 0.5 + 7.8 + 0.0066 + 0.165 = 8.87W
+\]</div>
 
 
 
