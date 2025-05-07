@@ -29,7 +29,7 @@
 
     
       
-        <title>Component Selection - SANJIT's INDIVIDUAL WEBPAGE</title>
+        <title>Component Selection and MQTT Subsystem Updates - SANJIT's INDIVIDUAL WEBPAGE</title>
       
     
     
@@ -128,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Component Selection
+              Component Selection and MQTT Subsystem Updates
             
           </span>
         </div>
@@ -277,7 +277,7 @@
   
     
   
-  Component Selection
+  Component Selection and MQTT Subsystem Updates
 
       </a>
     </li>
@@ -483,7 +483,7 @@
           
   
   <span class="md-ellipsis">
-    Component Selection
+    Component Selection and MQTT Subsystem Updates
   </span>
   
 
@@ -494,7 +494,7 @@
         
   
   <span class="md-ellipsis">
-    Component Selection
+    Component Selection and MQTT Subsystem Updates
   </span>
   
 
@@ -523,11 +523,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#component-selection" class="md-nav__link">
-    Component Selection
+  <a href="#original-component-selection" class="md-nav__link">
+    Original Component Selection
   </a>
   
-    <nav class="md-nav" aria-label="Component Selection">
+    <nav class="md-nav" aria-label="Original Component Selection">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -551,42 +551,36 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#additional-recommended-components" class="md-nav__link">
     Additional Recommended Components
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#subsystem-responsibilities" class="md-nav__link">
-    Subsystem Responsibilities
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pin-assignments" class="md-nav__link">
-    Pin Assignments
-  </a>
-  
-    <nav class="md-nav" aria-label="Pin Assignments">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#esp32-pin-configuration" class="md-nav__link">
-    ESP32 Pin Configuration:
-  </a>
-  
-</li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updated-final-component-selection" class="md-nav__link">
+    Updated Final Component Selection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updated-pinout-configuration" class="md-nav__link">
+    Updated Pinout Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-making-process" class="md-nav__link">
+    Decision-Making Process
+  </a>
   
 </li>
       
@@ -720,11 +714,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#component-selection" class="md-nav__link">
-    Component Selection
+  <a href="#original-component-selection" class="md-nav__link">
+    Original Component Selection
   </a>
   
-    <nav class="md-nav" aria-label="Component Selection">
+    <nav class="md-nav" aria-label="Original Component Selection">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -748,42 +742,36 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#additional-recommended-components" class="md-nav__link">
     Additional Recommended Components
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#subsystem-responsibilities" class="md-nav__link">
-    Subsystem Responsibilities
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pin-assignments" class="md-nav__link">
-    Pin Assignments
-  </a>
-  
-    <nav class="md-nav" aria-label="Pin Assignments">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#esp32-pin-configuration" class="md-nav__link">
-    ESP32 Pin Configuration:
-  </a>
-  
-</li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updated-final-component-selection" class="md-nav__link">
+    Updated Final Component Selection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updated-pinout-configuration" class="md-nav__link">
+    Updated Pinout Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-making-process" class="md-nav__link">
+    Decision-Making Process
+  </a>
   
 </li>
       
@@ -819,11 +807,11 @@
 
 <h1 id="wi-fi-enabled-data-collection-and-transmission-subsystem">Wi-Fi-Enabled Data Collection and Transmission Subsystem</h1>
 <h2 id="overview"><strong>Overview</strong></h2>
-<p>In this embedded systems design project, we focus on building a subsystem capable of collecting sensor data, transmitting it over a Wi-Fi network managed by the ESP32 microcontroller, and updating a real-time webpage hosted on GitHub. This document provides an in-depth look into the component selection process, emphasizing efficient power regulation, dependable wireless communication, and seamless sensor integration.</p>
+<p>In this embedded systems design project, we focus on building a subsystem capable of collecting sensor data, transmitting it over a Wi-Fi network managed by the ESP32 microcontroller, and updating a real-time webpage hosted on GitHub. This document provides both the <strong>original component selection rationale</strong> and the <strong>updated final summary</strong>, including new components, an expanded pinout, and a decision-making discussion.</p>
 <hr />
-<h2 id="component-selection"><strong>Component Selection</strong></h2>
+<h2 id="original-component-selection"><strong>Original Component Selection</strong></h2>
 <h3 id="microcontroller"><strong>Microcontroller</strong></h3>
-<p>For the heart of our subsystem, we’ve chosen the <strong>ESP32 microcontroller</strong>. Its built-in Wi-Fi connectivity, processing capabilities, and flexibility make it the perfect choice for our project, handling both sensor data acquisition and transmission efficiently.</p>
+<p>For the heart of our subsystem, we chose the <strong>ESP32-S3-WROOM-1-N4</strong>. Its built-in Wi-Fi connectivity, processing capabilities, and flexibility make it ideal for sensor data acquisition and transmission.</p>
 <table>
 <thead>
 <tr>
@@ -855,9 +843,8 @@
 </tbody>
 </table>
 <p><strong>Choice:</strong><br />
-We selected the <strong>ESP32-S3-WROOM-1-N4</strong> due to its superior Wi-Fi capabilities, dual-core processor for multitasking, and compatibility with sensor interfaces like I2C and SPI. Its low power consumption and comprehensive library support make it ideal for real-time data processing and transmission.</p>
-<p><a class="glightbox" href="../subfolder/esp32.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="ESP32-S3-WROOM-1-N4" src="../subfolder/esp32.png" /></a></p>
-<hr />
+We selected the <strong>ESP32-S3-WROOM-1-N4</strong> due to its superior Wi-Fi capabilities, dual-core processor for multitasking, and compatibility with sensor interfaces like I2C and SPI.
+<a class="glightbox" href="../subfolder/esp32.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="ESP32-S3-WROOM-1-N4" src="../subfolder/esp32.png" /></a></p>
 <h3 id="power-regulation"><strong>Power Regulation</strong></h3>
 <p>To ensure stable operation of the ESP32 and connected sensors, we require a voltage regulator that steps down the input voltage to a steady 3.3V.</p>
 <table>
@@ -871,10 +858,10 @@ We selected the <strong>ESP32-S3-WROOM-1-N4</strong> due to its superior Wi-Fi c
 </thead>
 <tbody>
 <tr>
-<td><strong>AMS1117-3.3</strong></td>
+<td><strong>AP63203WU-7</strong></td>
 <td>Simple design, low cost</td>
 <td>Low efficiency</td>
-<td><a href="https://www.digikey.com/en/products/detail/umw/AMS1117-3-3/17635254">$0.68 DigiKey</a></td>
+<td><a href="https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf">$1.38 DigiKey</a></td>
 </tr>
 <tr>
 <td>LM2596</td>
@@ -886,119 +873,133 @@ We selected the <strong>ESP32-S3-WROOM-1-N4</strong> due to its superior Wi-Fi c
 <td>HT7333</td>
 <td>Ultra-low quiescent current</td>
 <td>Limited current output</td>
-<td><a href="https://www.digikey.com/en/products/detail/umw/HT7333-A/17635230">$0.65 DigiKey</a></td>
+<td><a href="https://www.digikey.com/en/products/detail/umw/HT7333-A/17635230">$2.65 DigiKey</a></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Choice:</strong><br />
-The <strong>AMS1117-3.3</strong> was chosen for its simplicity, affordability, and compatibility with surface-mount applications. It adequately meets the power needs of the ESP32 and associated peripherals.</p>
-<p><a class="glightbox" href="../subfolder/vregulator.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="AMS1117-3.3" src="../subfolder/vregulator.png" /></a></p>
-<hr />
+The <strong>AP63203WU-7</strong> was chosen for simplicity, affordability, and SMD compatibility.
+<a class="glightbox" href="./subfolder/vregulator1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="AP63203WU-7" src="./subfolder/vregulator1.png" /></a></p>
 <h3 id="power-input"><strong>Power Input</strong></h3>
-<p>To provide consistent power for the ESP32 and sensors, we need a reliable input source.</p>
-<p><strong>Choice:</strong><br />
-A <strong>DC Barrel Jack Adapter</strong> was chosen for its reliable performance, ease of connection, and ability to supply stable power from an external adapter, ensuring uninterrupted subsystem operation.</p>
-<hr />
-<h2 id="additional-recommended-components"><strong>Additional Recommended Components</strong></h2>
-<p>For enhanced functionality and robustness, the following components are recommended:</p>
+<p>To provide consistent power for the ESP32 and sensors, we selected a <strong>DC Barrel Jack Adapter</strong> for reliable external power.</p>
+<h3 id="additional-recommended-components"><strong>Additional Recommended Components</strong></h3>
 <ol>
-<li><strong>Boot and Enable Buttons:</strong>  </li>
-<li>
-<p>Add pull-up resistors with Boot and Enable buttons for easier troubleshooting.</p>
-</li>
-<li>
-<p><strong>Capacitors (Decoupling):</strong>  </p>
-</li>
-<li>
-<p>10µF and 0.1µF capacitors to stabilize voltage and reduce noise near the ESP32 and voltage regulator.</p>
-</li>
-<li>
-<p><strong>Level Shifters:</strong>  </p>
-</li>
-<li>
-<p>Ensure compatibility between sensors operating at 5V logic and the ESP32's 3.3V GPIO pins.</p>
-</li>
-<li>
-<p><strong>LED Indicators:</strong>  </p>
-</li>
-<li>Incorporate LEDs to monitor power status and Wi-Fi activity for better debugging.</li>
+<li><strong>Boot and Enable Buttons</strong>  </li>
+<li><strong>Decoupling Capacitors (10µF, 0.1µF)</strong>  </li>
+<li><strong>LED Indicators</strong>  </li>
 </ol>
 <hr />
-<h2 id="subsystem-responsibilities"><strong>Subsystem Responsibilities</strong></h2>
-<p>The key tasks for this subsystem include:</p>
-<ol>
-<li><strong>Data Collection:</strong>  </li>
-<li>
-<p>Interface with sensors using I2C, SPI, or UART protocols.</p>
-</li>
-<li>
-<p><strong>Wi-Fi Communication:</strong>  </p>
-</li>
-<li>
-<p>Use the ESP32's built-in Wi-Fi to create a local network and transmit data.</p>
-</li>
-<li>
-<p><strong>Power Management:</strong>  </p>
-</li>
-<li>
-<p>Regulate voltage with the AMS1117-3.3 to maintain a stable 3.3V supply.</p>
-</li>
-<li>
-<p><strong>Data Transmission:</strong>  </p>
-</li>
-<li>
-<p>Update sensor readings on a real-time OLED display.</p>
-</li>
-<li>
-<p><strong>Integration:</strong>  </p>
-</li>
-<li>Ensure seamless compatibility between the sensors, motors, and microcontroller using correct pin assignments and libraries.</li>
-</ol>
-<hr />
-<h2 id="pin-assignments"><strong>Pin Assignments</strong></h2>
-<h3 id="esp32-pin-configuration">ESP32 Pin Configuration:</h3>
+<h2 id="updated-final-component-selection"><strong>Updated Final Component Selection</strong></h2>
 <table>
 <thead>
 <tr>
-<th><strong>Peripheral</strong></th>
-<th><strong>Pin Assignment</strong></th>
+<th><strong>Component</strong></th>
+<th><strong>Role</strong></th>
+<th><strong>Key Specifications</strong></th>
+<th><strong>Justification</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>I2C SDA</td>
-<td>GPIO20</td>
+<td><strong>ESP32-S3-WROOM-1-N4</strong></td>
+<td>Microcontroller &amp; Wi-Fi module</td>
+<td>Dual-core Xtensa MCU, 4 MB Flash, 3.3 V</td>
+<td>Native Wi-Fi/MQTT support, low-power modes, ample I/O</td>
 </tr>
 <tr>
-<td>I2C SCL</td>
-<td>GPIO21</td>
+<td><strong>AP63203WU-7</strong></td>
+<td>3.3 V Voltage Regulator</td>
+<td>600 mA output, SOT-23 package, low noise</td>
+<td>Stable 3.3 V, small footprint, cost-effective</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><em>Passive components, pushbuttons, and indicators are documented elsewhere.</em></p>
+</blockquote>
+<hr />
+<h2 id="updated-pinout-configuration"><strong>Updated Pinout Configuration</strong></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Function</strong></th>
+<th><strong>ESP32 Pin</strong></th>
+<th><strong>Peripheral / Signal</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Power Supply Input</td>
+<td>VIN</td>
+<td>DC Barrel Jack (5–12 V)</td>
+<td>Feeds voltage regulator</td>
 </tr>
 <tr>
-<td>SPI MOSI</td>
-<td>GPIO24</td>
+<td>Regulated Output</td>
+<td>3V3</td>
+<td>3.3 V rail</td>
+<td>Supplies ESP32 and sensors</td>
 </tr>
 <tr>
-<td>SPI MISO</td>
-<td>GPIO19</td>
+<td>Wi-Fi Antenna</td>
+<td>ANT</td>
+<td>External antenna</td>
+<td>Optional for range enhancement</td>
 </tr>
 <tr>
-<td>SPI SCLK</td>
+<td>UART TX (Debug)</td>
+<td>GPIO17</td>
+<td>UART1 TX</td>
+<td>Serial debug communication</td>
+</tr>
+<tr>
+<td>UART RX (Debug)</td>
 <td>GPIO18</td>
+<td>UART1 RX</td>
+<td>Serial debug communication</td>
 </tr>
 <tr>
-<td>UART TX/RX</td>
-<td>Debugging Pins</td>
-</tr>
-<tr>
-<td>Power Input</td>
-<td>VIN (via DC Barrel Jack)</td>
+<td>MQTT Task Scheduling</td>
+<td>—</td>
+<td>Firmware logic</td>
+<td>Runs on dual cores</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="conclusion"><strong>Conclusion</strong></h2>
-<p>The selected components provide a reliable and efficient design for the data collection and transmission subsystem. By incorporating proper power regulation, dependable Wi-Fi communication, and necessary peripheral enhancements, this subsystem is well-suited for continuous, real-time operation in our embedded systems project.</p>
+<h2 id="decision-making-process"><strong>Decision-Making Process</strong></h2>
+<ol>
+<li><strong>Core Requirements</strong>  </li>
+<li>Reliable Wi-Fi &amp; MQTT support  </li>
+<li>Sufficient processing headroom  </li>
+<li>
+<p>Low-power operation on 3.3 V  </p>
+</li>
+<li>
+<p><strong>Evaluation</strong>  </p>
+</li>
+<li><strong>ESP32-S3</strong>: Chosen for integrated Wi-Fi, dual cores, OTA support, and low-power modes.  </li>
+<li>
+<p><strong>AP63203WU-7</strong>: Chosen for clean 3.3 V, up to 600 mA, compact SOT-23 package.  </p>
+</li>
+<li>
+<p><strong>Requirements Alignment</strong>  </p>
+</li>
+<li><strong>Reliability</strong>: Proven components with wide community support.  </li>
+<li><strong>Scalability</strong>: Extra I/O and integrated wireless allow future expansion.  </li>
+<li>
+<p><strong>Maintainability</strong>: Standard interfaces and libraries simplify firmware updates.  </p>
+</li>
+<li>
+<p><strong>Feedback Addressed</strong>  </p>
+</li>
+<li>Added decoupling capacitors for power stability.  </li>
+<li>Remapped debug UART to free primary pins.</li>
+</ol>
 <hr />
+<h2 id="conclusion"><strong>Conclusion</strong></h2>
+<p>By retaining the original rationale and integrating the updated summary, pinout, and decision-making insights, this document now fully reflects both the initial component evaluation and the final selections that satisfy the subsystem requirements.</p>
 
 
 
