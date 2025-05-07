@@ -1,83 +1,59 @@
-# MQTT Subsystem UART Communication
+## Firmware API & Behavior
 
-## Introduction
-The MQTT subsystem is at the end of the UART daisy chain, so my main process will be to pass on the messages I receive back to the beginning of the chain. I will be using the data I receive on the WiFi server, but the MQTT communication will be outlined on a different page than this one. This page will only focus on the UART communications for the smart irrigation system.
+This firmware on the ESP32 sits at the end of our UART daisy‐chain (“T” node) and also acts as an MQTT client.  Its two main tasks are:
 
-## Message Overview
-| Message  | Variable Name         | Variable Type | Min Value | Max Value | Example |
-|----------|----------------------|--------------|-----------|-----------|---------|
-| Message 1 | Soil_Moisture_Value  | uint8_t      | 0         | 255       | 120     |
-| Message 2 | Motor_Pump_Value     | uint8_t      | 0         | 255       | 180     |
-| Message 3 | Temp_Humidity_Value  | uint8_t      | 0         | 255       | 85      |
+1. **Periodic Temperature Request**  
+   - **Every 10 seconds**, send an 8-byte UART frame to ask the PIC (“E” node) for the latest temperature reading.  
+   - **Frame:**  
+     ```
+     Byte  Content     ASCII
+      0    'F'         0x46
+      1    'S'         0x53
+      2    'T'         sender = 'T' (this ESP32)
+      3    'E'         receiver = 'E' (the PIC)
+      4    '0'         payload high nibble ('0')
+      5    '0'         payload low nibble ('0')
+      6    'F'         0x46
+      7    'S'         0x53
+     ```  
+   - **Constant in code:**  
+     ```python
+     CMD_REQ = b'FSTE00FS'
+     ```
 
-I will be receiving three different data values from upstream:
-- **Soil moisture sensor data** (from my ESP32).
-- **Bi-directional motor pump status** (from a PIC microcontroller).
-- **Temperature & humidity sensor data** (from another ESP32).
+2. **UART Listener & MQTT Publisher**  
+   - **Listens** for any **8-byte** frame addressed back to this node (receiver = 'T').  
+   - **Validates** header/footer (`b'FS' ... b'FS'`).  
+   - **Parses** the two ASCII-digit payload bytes into an integer **temperature** (0–99 °C).  
+   - **Publishes** the parsed temperature to the MQTT topic `test/sanjit/SUB`.  
+   - **Decides** on a motor command based on temperature:  
+     - `≤ 20 °C` → **REV**  
+     - `21–34 °C` → **OFF**  
+     - `≥ 35 °C` → **ON**  
+   - **Sends** the corresponding 8-byte “motor control” frame back over UART (to the PIC, receiver = 'S').  
+   - **Publishes** the motor state string (`b'REV'`, `b'OFF'`, or `b'ON'`) to MQTT topic `test/sanjit/PUB`.
 
-These values will be uploaded to the WiFi server and then passed along the chain to the LCD display subsystem, ensuring the data is available to all team members. This means that all messages will be both received and transmitted.
+### UART ↔ MQTT Mapping
 
-## Soil Moisture Value
-### Receive Format
-| Byte  | Byte Name               | Byte Type | Byte Contents |
-|-------|-------------------------|-----------|---------------|
-| 1     | Start                   | uint8_t   | 0x41          |
-| 2     | Sender                  | uint8_t   | 0x03          |
-| 3     | Receiver                | uint8_t   | 0x05          |
-| 4     | Soil_Moisture_Value     | uint8_t   | Sensor Byte   |
-| 5     | End                     | uint8_t   | 0x42          |
+| UART Frame       | Meaning            | MQTT Publish            | Topic                   |
+|------------------|--------------------|--------------------------|-------------------------|
+| `FSTE00FS`       | Ask PIC for temp   | (none)                   | —                       |
+| `FS T→T temp FS` | Temperature reply  | `str(temp).encode()`     | `test/sanjit/SUB`       |
+| `FS T→S 03 FS`   | Motor = REV        | `b'REV'`                 | `test/sanjit/PUB`       |
+| `FS T→S 01 FS`   | Motor = OFF        | `b'OFF'`                 | `test/sanjit/PUB`       |
+| `FS T→S 02 FS`   | Motor = ON         | `b'ON'`                  | `test/sanjit/PUB`       |
 
-### Transmit Format
-| Byte  | Byte Name               | Byte Type | Byte Contents |
-|-------|-------------------------|-----------|---------------|
-| 1     | Start                   | uint8_t   | 0x41          |
-| 2     | Sender                  | uint8_t   | 0x05          |
-| 3     | Receiver                | uint8_t   | 0x04          |
-| 4     | Soil_Moisture_Value     | uint8_t   | Sensor Byte   |
-| 5     | End                     | uint8_t   | 0x42          |
+> **Note on Topics**  
+> - **SUB** topic (**`test/sanjit/SUB`**) carries only temperature strings.  
+> - **PUB** topic (**`test/sanjit/PUB`**) carries motor‐state commands.
 
-## Motor Pump Value
-### Receive Format
-| Byte  | Byte Name               | Byte Type | Byte Contents |
-|-------|-------------------------|-----------|---------------|
-| 1     | Start                   | uint8_t   | 0x41          |
-| 2     | Sender                  | uint8_t   | 0x03          |
-| 3     | Receiver                | uint8_t   | 0x05          |
-| 4     | Motor_Pump_Value        | uint8_t   | Motor Byte    |
-| 5     | End                     | uint8_t   | 0x42          |
+### Helper Functions in `main.py`
 
-### Transmit Format
-| Byte  | Byte Name               | Byte Type | Byte Contents |
-|-------|-------------------------|-----------|---------------|
-| 1     | Start                   | uint8_t   | 0x41          |
-| 2     | Sender                  | uint8_t   | 0x05          |
-| 3     | Receiver                | uint8_t   | 0x04          |
-| 4     | Motor_Pump_Value        | uint8_t   | Motor Byte    |
-| 5     | End                     | uint8_t   | 0x42          |
+```python
+def uart_send(frame: bytes):
+    """Write an 8-byte frame to UART and log it."""
+    uart.write(frame)
 
-## Temperature & Humidity Value
-### Receive Format
-| Byte  | Byte Name               | Byte Type | Byte Contents |
-|-------|-------------------------|-----------|---------------|
-| 1     | Start                   | uint8_t   | 0x41          |
-| 2     | Sender                  | uint8_t   | 0x03          |
-| 3     | Receiver                | uint8_t   | 0x05          |
-| 4     | Temp_Humidity_Value     | uint8_t   | Sensor Byte   |
-| 5     | End                     | uint8_t   | 0x42          |
-
-### Transmit Format
-| Byte  | Byte Name               | Byte Type | Byte Contents |
-|-------|-------------------------|-----------|---------------|
-| 1     | Start                   | uint8_t   | 0x41          |
-| 2     | Sender                  | uint8_t   | 0x05          |
-| 3     | Receiver                | uint8_t   | 0x04          |
-| 4     | Temp_Humidity_Value     | uint8_t   | Sensor Byte   |
-| 5     | End                     | uint8_t   | 0x42          |
-
-## Summary of the Data Flow in the Daisy Chain
-1. **My ESP32** collects soil moisture data and sends it via UART.
-2. **The LCD ESP32** displays this data and passes it along.
-3. **The PIC (Motor Pump Controller)** receives motor commands and transmits pump status.
-4. **The Temperature & Humidity ESP32** sends its sensor data.
-5. **The entire chain loops back to me**, ensuring the data is properly cycled through all subsystems.
-
+async def publish(topic: bytes, msg: bytes):
+    """Publish msg to MQTT topic with QoS=1 and log it."""
+    await client.publish(topic, msg, qos=1)
