@@ -24,15 +24,11 @@ Here is the Schematic for Internet Communication Subsystem:
 Below are high-resolution photographs of our final fabricated PCB, showcasing both the front and back views.
 
 ### Front View
-<p align="center">
-  <img src="./subfolder/pcbfront.png" alt="Final PCB front side" width="600"/>
-</p>
+![Stage 1: Ideation](./subfolder/pcbfront.png)
 *Figure 2.1: Front side of the PCB, showing component placement, silkscreen labels, and indicator LEDs.*
 
 ### Back View
-<p align="center">
-  <img src="./subfolder/pcbback.png" alt="Final PCB back side" width="600"/>
-</p>
+![Stage 1: Ideation](./subfolder/pcbback.png)
 *Figure 2.2: Back side of the PCB, highlighting the ground pour, power rails, and via stitching.*
 
 
