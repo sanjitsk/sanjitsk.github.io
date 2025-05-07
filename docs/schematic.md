@@ -40,7 +40,7 @@ Below are high-resolution photographs of our final fabricated PCB, showcasing bo
 
 All Gerber outputs for fabrication:
 
-[⬇️ Download Gerber Files (ZIP)](./subfolder/gerber_final.zip)
+[⬇️ Download Gerber Files (ZIP)](./subfolder/gerber.zip)
 
 ---
 
