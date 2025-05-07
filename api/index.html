@@ -29,7 +29,7 @@
 
     
       
-        <title>MQTT Subsystem UART Communication - SANJIT's INDIVIDUAL WEBPAGE</title>
+        <title>Api - SANJIT's INDIVIDUAL WEBPAGE</title>
       
     
     
@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mqtt-subsystem-uart-communication" class="md-skip">
+        <a href="#firmware-api-behavior" class="md-skip">
           Skip to content
         </a>
       
@@ -128,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MQTT Subsystem UART Communication
+              Api
             
           </span>
         </div>
@@ -243,7 +243,7 @@
   
     
   
-  MQTT Subsystem UART Communication
+  Api
 
       </a>
     </li>
@@ -438,14 +438,12 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   <span class="md-ellipsis">
-    MQTT Subsystem UART Communication
+    Api
   </span>
   
 
@@ -456,7 +454,7 @@
         
   
   <span class="md-ellipsis">
-    MQTT Subsystem UART Communication
+    Api
   </span>
   
 
@@ -468,8 +466,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -478,104 +474,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    Introduction
+  <a href="#firmware-api-behavior" class="md-nav__link">
+    Firmware API &amp; Behavior
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#message-overview" class="md-nav__link">
-    Message Overview
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#soil-moisture-value" class="md-nav__link">
-    Soil Moisture Value
-  </a>
-  
-    <nav class="md-nav" aria-label="Soil Moisture Value">
+    <nav class="md-nav" aria-label="Firmware API & Behavior">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#receive-format" class="md-nav__link">
-    Receive Format
+  <a href="#uart-mqtt-mapping" class="md-nav__link">
+    UART ↔ MQTT Mapping
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#transmit-format" class="md-nav__link">
-    Transmit Format
+  <a href="#helper-functions-in-mainpy" class="md-nav__link">
+    Helper Functions in main.py
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#motor-pump-value" class="md-nav__link">
-    Motor Pump Value
-  </a>
-  
-    <nav class="md-nav" aria-label="Motor Pump Value">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#receive-format_1" class="md-nav__link">
-    Receive Format
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#transmit-format_1" class="md-nav__link">
-    Transmit Format
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#temperature-humidity-value" class="md-nav__link">
-    Temperature &amp; Humidity Value
-  </a>
-  
-    <nav class="md-nav" aria-label="Temperature & Humidity Value">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#receive-format_2" class="md-nav__link">
-    Receive Format
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#transmit-format_2" class="md-nav__link">
-    Transmit Format
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary-of-the-data-flow-in-the-daisy-chain" class="md-nav__link">
-    Summary of the Data Flow in the Daisy Chain
-  </a>
   
 </li>
       
@@ -723,8 +644,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -733,104 +652,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    Introduction
+  <a href="#firmware-api-behavior" class="md-nav__link">
+    Firmware API &amp; Behavior
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#message-overview" class="md-nav__link">
-    Message Overview
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#soil-moisture-value" class="md-nav__link">
-    Soil Moisture Value
-  </a>
-  
-    <nav class="md-nav" aria-label="Soil Moisture Value">
+    <nav class="md-nav" aria-label="Firmware API & Behavior">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#receive-format" class="md-nav__link">
-    Receive Format
+  <a href="#uart-mqtt-mapping" class="md-nav__link">
+    UART ↔ MQTT Mapping
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#transmit-format" class="md-nav__link">
-    Transmit Format
+  <a href="#helper-functions-in-mainpy" class="md-nav__link">
+    Helper Functions in main.py
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#motor-pump-value" class="md-nav__link">
-    Motor Pump Value
-  </a>
-  
-    <nav class="md-nav" aria-label="Motor Pump Value">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#receive-format_1" class="md-nav__link">
-    Receive Format
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#transmit-format_1" class="md-nav__link">
-    Transmit Format
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#temperature-humidity-value" class="md-nav__link">
-    Temperature &amp; Humidity Value
-  </a>
-  
-    <nav class="md-nav" aria-label="Temperature & Humidity Value">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#receive-format_2" class="md-nav__link">
-    Receive Format
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#transmit-format_2" class="md-nav__link">
-    Transmit Format
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary-of-the-data-flow-in-the-daisy-chain" class="md-nav__link">
-    Summary of the Data Flow in the Daisy Chain
-  </a>
   
 </li>
       
@@ -857,322 +701,101 @@
   
 
 
-<h1 id="mqtt-subsystem-uart-communication">MQTT Subsystem UART Communication</h1>
-<h2 id="introduction">Introduction</h2>
-<p>The MQTT subsystem is at the end of the UART daisy chain, so my main process will be to pass on the messages I receive back to the beginning of the chain. I will be using the data I receive on the WiFi server, but the MQTT communication will be outlined on a different page than this one. This page will only focus on the UART communications for the smart irrigation system.</p>
-<h2 id="message-overview">Message Overview</h2>
-<table>
-<thead>
-<tr>
-<th>Message</th>
-<th>Variable Name</th>
-<th>Variable Type</th>
-<th>Min Value</th>
-<th>Max Value</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Message 1</td>
-<td>Soil_Moisture_Value</td>
-<td>uint8_t</td>
-<td>0</td>
-<td>255</td>
-<td>120</td>
-</tr>
-<tr>
-<td>Message 2</td>
-<td>Motor_Pump_Value</td>
-<td>uint8_t</td>
-<td>0</td>
-<td>255</td>
-<td>180</td>
-</tr>
-<tr>
-<td>Message 3</td>
-<td>Temp_Humidity_Value</td>
-<td>uint8_t</td>
-<td>0</td>
-<td>255</td>
-<td>85</td>
-</tr>
-</tbody>
-</table>
-<p>I will be receiving three different data values from upstream:
-- <strong>Soil moisture sensor data</strong> (from my ESP32).
-- <strong>Bi-directional motor pump status</strong> (from a PIC microcontroller).
-- <strong>Temperature &amp; humidity sensor data</strong> (from another ESP32).</p>
-<p>These values will be uploaded to the WiFi server and then passed along the chain to the LCD display subsystem, ensuring the data is available to all team members. This means that all messages will be both received and transmitted.</p>
-<h2 id="soil-moisture-value">Soil Moisture Value</h2>
-<h3 id="receive-format">Receive Format</h3>
-<table>
-<thead>
-<tr>
-<th>Byte</th>
-<th>Byte Name</th>
-<th>Byte Type</th>
-<th>Byte Contents</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Start</td>
-<td>uint8_t</td>
-<td>0x41</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Sender</td>
-<td>uint8_t</td>
-<td>0x03</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Receiver</td>
-<td>uint8_t</td>
-<td>0x05</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Soil_Moisture_Value</td>
-<td>uint8_t</td>
-<td>Sensor Byte</td>
-</tr>
-<tr>
-<td>5</td>
-<td>End</td>
-<td>uint8_t</td>
-<td>0x42</td>
-</tr>
-</tbody>
-</table>
-<h3 id="transmit-format">Transmit Format</h3>
-<table>
-<thead>
-<tr>
-<th>Byte</th>
-<th>Byte Name</th>
-<th>Byte Type</th>
-<th>Byte Contents</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Start</td>
-<td>uint8_t</td>
-<td>0x41</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Sender</td>
-<td>uint8_t</td>
-<td>0x05</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Receiver</td>
-<td>uint8_t</td>
-<td>0x04</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Soil_Moisture_Value</td>
-<td>uint8_t</td>
-<td>Sensor Byte</td>
-</tr>
-<tr>
-<td>5</td>
-<td>End</td>
-<td>uint8_t</td>
-<td>0x42</td>
-</tr>
-</tbody>
-</table>
-<h2 id="motor-pump-value">Motor Pump Value</h2>
-<h3 id="receive-format_1">Receive Format</h3>
-<table>
-<thead>
-<tr>
-<th>Byte</th>
-<th>Byte Name</th>
-<th>Byte Type</th>
-<th>Byte Contents</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Start</td>
-<td>uint8_t</td>
-<td>0x41</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Sender</td>
-<td>uint8_t</td>
-<td>0x03</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Receiver</td>
-<td>uint8_t</td>
-<td>0x05</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Motor_Pump_Value</td>
-<td>uint8_t</td>
-<td>Motor Byte</td>
-</tr>
-<tr>
-<td>5</td>
-<td>End</td>
-<td>uint8_t</td>
-<td>0x42</td>
-</tr>
-</tbody>
-</table>
-<h3 id="transmit-format_1">Transmit Format</h3>
-<table>
-<thead>
-<tr>
-<th>Byte</th>
-<th>Byte Name</th>
-<th>Byte Type</th>
-<th>Byte Contents</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Start</td>
-<td>uint8_t</td>
-<td>0x41</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Sender</td>
-<td>uint8_t</td>
-<td>0x05</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Receiver</td>
-<td>uint8_t</td>
-<td>0x04</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Motor_Pump_Value</td>
-<td>uint8_t</td>
-<td>Motor Byte</td>
-</tr>
-<tr>
-<td>5</td>
-<td>End</td>
-<td>uint8_t</td>
-<td>0x42</td>
-</tr>
-</tbody>
-</table>
-<h2 id="temperature-humidity-value">Temperature &amp; Humidity Value</h2>
-<h3 id="receive-format_2">Receive Format</h3>
-<table>
-<thead>
-<tr>
-<th>Byte</th>
-<th>Byte Name</th>
-<th>Byte Type</th>
-<th>Byte Contents</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Start</td>
-<td>uint8_t</td>
-<td>0x41</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Sender</td>
-<td>uint8_t</td>
-<td>0x03</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Receiver</td>
-<td>uint8_t</td>
-<td>0x05</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Temp_Humidity_Value</td>
-<td>uint8_t</td>
-<td>Sensor Byte</td>
-</tr>
-<tr>
-<td>5</td>
-<td>End</td>
-<td>uint8_t</td>
-<td>0x42</td>
-</tr>
-</tbody>
-</table>
-<h3 id="transmit-format_2">Transmit Format</h3>
-<table>
-<thead>
-<tr>
-<th>Byte</th>
-<th>Byte Name</th>
-<th>Byte Type</th>
-<th>Byte Contents</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Start</td>
-<td>uint8_t</td>
-<td>0x41</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Sender</td>
-<td>uint8_t</td>
-<td>0x05</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Receiver</td>
-<td>uint8_t</td>
-<td>0x04</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Temp_Humidity_Value</td>
-<td>uint8_t</td>
-<td>Sensor Byte</td>
-</tr>
-<tr>
-<td>5</td>
-<td>End</td>
-<td>uint8_t</td>
-<td>0x42</td>
-</tr>
-</tbody>
-</table>
-<h2 id="summary-of-the-data-flow-in-the-daisy-chain">Summary of the Data Flow in the Daisy Chain</h2>
+  <h1>Api</h1>
+
+<h2 id="firmware-api-behavior">Firmware API &amp; Behavior</h2>
+<p>This firmware on the ESP32 sits at the end of our UART daisy‐chain (“T” node) and also acts as an MQTT client.  Its two main tasks are:</p>
 <ol>
-<li><strong>My ESP32</strong> collects soil moisture data and sends it via UART.</li>
-<li><strong>The LCD ESP32</strong> displays this data and passes it along.</li>
-<li><strong>The PIC (Motor Pump Controller)</strong> receives motor commands and transmits pump status.</li>
-<li><strong>The Temperature &amp; Humidity ESP32</strong> sends its sensor data.</li>
-<li><strong>The entire chain loops back to me</strong>, ensuring the data is properly cycled through all subsystems.</li>
+<li><strong>Periodic Temperature Request</strong>  </li>
+<li><strong>Every 10 seconds</strong>, send an 8-byte UART frame to ask the PIC (“E” node) for the latest temperature reading.  </li>
+<li><strong>Frame:</strong><br />
+     <div class="highlight"><pre><span></span><code>Byte  Content     ASCII
+ 0    &#39;F&#39;         0x46
+ 1    &#39;S&#39;         0x53
+ 2    &#39;T&#39;         sender = &#39;T&#39; (this ESP32)
+ 3    &#39;E&#39;         receiver = &#39;E&#39; (the PIC)
+ 4    &#39;0&#39;         payload high nibble (&#39;0&#39;)
+ 5    &#39;0&#39;         payload low nibble (&#39;0&#39;)
+ 6    &#39;F&#39;         0x46
+ 7    &#39;S&#39;         0x53
+</code></pre></div></li>
+<li>
+<p><strong>Constant in code:</strong><br />
+     <div class="highlight"><pre><span></span><code><span class="n">CMD_REQ</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;FSTE00FS&#39;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>UART Listener &amp; MQTT Publisher</strong>  </p>
+</li>
+<li><strong>Listens</strong> for any <strong>8-byte</strong> frame addressed back to this node (receiver = 'T').  </li>
+<li><strong>Validates</strong> header/footer (<code>b'FS' ... b'FS'</code>).  </li>
+<li><strong>Parses</strong> the two ASCII-digit payload bytes into an integer <strong>temperature</strong> (0–99 °C).  </li>
+<li><strong>Publishes</strong> the parsed temperature to the MQTT topic <code>test/sanjit/SUB</code>.  </li>
+<li><strong>Decides</strong> on a motor command based on temperature:  <ul>
+<li><code>≤ 20 °C</code> → <strong>REV</strong>  </li>
+<li><code>21–34 °C</code> → <strong>OFF</strong>  </li>
+<li><code>≥ 35 °C</code> → <strong>ON</strong>  </li>
+</ul>
+</li>
+<li><strong>Sends</strong> the corresponding 8-byte “motor control” frame back over UART (to the PIC, receiver = 'S').  </li>
+<li><strong>Publishes</strong> the motor state string (<code>b'REV'</code>, <code>b'OFF'</code>, or <code>b'ON'</code>) to MQTT topic <code>test/sanjit/PUB</code>.</li>
 </ol>
+<h3 id="uart-mqtt-mapping">UART ↔ MQTT Mapping</h3>
+<table>
+<thead>
+<tr>
+<th>UART Frame</th>
+<th>Meaning</th>
+<th>MQTT Publish</th>
+<th>Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FSTE00FS</code></td>
+<td>Ask PIC for temp</td>
+<td>(none)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>FS T→T temp FS</code></td>
+<td>Temperature reply</td>
+<td><code>str(temp).encode()</code></td>
+<td><code>test/sanjit/SUB</code></td>
+</tr>
+<tr>
+<td><code>FS T→S 03 FS</code></td>
+<td>Motor = REV</td>
+<td><code>b'REV'</code></td>
+<td><code>test/sanjit/PUB</code></td>
+</tr>
+<tr>
+<td><code>FS T→S 01 FS</code></td>
+<td>Motor = OFF</td>
+<td><code>b'OFF'</code></td>
+<td><code>test/sanjit/PUB</code></td>
+</tr>
+<tr>
+<td><code>FS T→S 02 FS</code></td>
+<td>Motor = ON</td>
+<td><code>b'ON'</code></td>
+<td><code>test/sanjit/PUB</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note on Topics</strong><br />
+- <strong>SUB</strong> topic (<strong><code>test/sanjit/SUB</code></strong>) carries only temperature strings.<br />
+- <strong>PUB</strong> topic (<strong><code>test/sanjit/PUB</code></strong>) carries motor‐state commands.</p>
+</blockquote>
+<h3 id="helper-functions-in-mainpy">Helper Functions in <code>main.py</code></h3>
+<p>```python
+def uart_send(frame: bytes):
+    """Write an 8-byte frame to UART and log it."""
+    uart.write(frame)</p>
+<p>async def publish(topic: bytes, msg: bytes):
+    """Publish msg to MQTT topic with QoS=1 and log it."""
+    await client.publish(topic, msg, qos=1)</p>
 
 
 
