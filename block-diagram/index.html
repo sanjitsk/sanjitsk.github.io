@@ -704,6 +704,41 @@
 <h2 id="download-the-block-diagram">Download the Block Diagram</h2>
 <p><a href="https://drive.google.com/file/d/1Zu_ZALLJ08QVjuWkUUsSZqnZJdQ2op89/view?usp=sharing">Draw.io Block Digram View</a>
 <a href="https://drive.google.com/file/d/1SzkVRQ6n4QjP0WH3-RH0_l-9RIu3c7Me/view?usp=sharing">Block Diagram PDF Dwonload</a></p>
+<h1 id="feedback-addressed"><strong>Feedback Addressed</strong></h1>
+<ul>
+<li><strong>Pin Labeling:</strong> All GPIO pins, power rails, headers, and LEDs in the block diagram have been clearly labeled to match the updated Pinout Configuration table.</li>
+<li><strong>Clarity of Interfaces:</strong> Added UART RX/TX arrows and MQTT publish/subscribe arrows to the server cloud.</li>
+<li><strong>Subsystem Independence:</strong> Highlighted how the module connects autonomously to Wi-Fi/MQTT and communicates over UART to coordinate with other subsystems.</li>
+</ul>
+<hr />
+<h2 id="decision-making-diagram-development"><strong>Decision-Making &amp; Diagram Development</strong></h2>
+<ol>
+<li><strong>System Goals</strong>  </li>
+<li><strong>Autonomy:</strong> Must operate independently once powered, without requiring host intervention.  </li>
+<li><strong>Bi-directional UART Control:</strong> Receive commands (e.g., “get temperature”) and send processed data to downstream motor and HMI subsystems.  </li>
+<li>
+<p><strong>MQTT Connectivity:</strong> Publish sensor data and receive high-level commands via the cloud.</p>
+</li>
+<li>
+<p><strong>Diagram Layout</strong>  </p>
+</li>
+<li><strong>Central MCU:</strong> Placed the ESP32 module at the core to emphasize its role as both “brain” (processing + MQTT client) and “bridge” (Wi-Fi ↔ UART).  </li>
+<li><strong>Power Domain:</strong> Grouped the DC barrel jack, 3.3 V regulator, and decoupling components on the left to show the power flow.  </li>
+<li><strong>Communication Paths:</strong>  <ul>
+<li><strong>Wi-Fi/MQTT:</strong> Upward arrows to the cloud server, labeled “Publish” (GPIO 40) and “Subscribe” (GPIO 38).  </li>
+<li><strong>UART:</strong> Horizontal lines to upstream/downstream headers, indicating RX (GPIO 19/21) and TX (GPIO 20/22).  </li>
+</ul>
+</li>
+<li>
+<p><strong>Debug Indicators:</strong> TX/RX LEDs and MQTT debug LEDs positioned near their related GPIO pins for easy board population.</p>
+</li>
+<li>
+<p><strong>Meeting Product Requirements</strong>  </p>
+</li>
+<li><strong>Reliability:</strong> Clear separation of power and data domains ensures minimal interference. Decoupling caps are placed near both the regulator and the ESP32 power pin (3V3).  </li>
+<li><strong>Scalability:</strong> Labeled I²C pins and spare GPIOs indicate room for additional sensors or actuators without a redesign.  </li>
+<li><strong>Maintainability:</strong> Standardized headers and clear pin labels facilitate firmware updates and hardware debugging. The diagram now directly references table entries, reducing ambiguity for assembly and testing.</li>
+</ol>
 
 
 
