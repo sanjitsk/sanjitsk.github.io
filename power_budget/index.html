@@ -589,6 +589,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-the-power-budget-was-used-conclusions" class="md-nav__link">
+    How the Power Budget Was Used &amp; Conclusions
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -744,6 +751,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-the-power-budget-was-used-conclusions" class="md-nav__link">
+    How the Power Budget Was Used &amp; Conclusions
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -801,19 +815,19 @@ where:<br />
 <td>Typical operating current; peaks can be higher but averaged here.</td>
 </tr>
 <tr>
-<td><strong>Green LEDs (Chip LED + 220 Ω series resistor)</strong></td>
+<td><strong>Green LEDs (+ 220 Ω series resistor)</strong></td>
 <td style="text-align: center;">5</td>
 <td style="text-align: center;">3.3 V</td>
-<td style="text-align: center;">(3.3−2.2)V/220Ω ≈ 0.005 A</td>
+<td style="text-align: center;">(3.3–2.2)V/220 Ω ≈ 0.005 A</td>
 <td style="text-align: center;">3.3 V × 0.005 A = 0.0165 W</td>
 <td style="text-align: center;">5 × 0.0165 = 0.0825 W</td>
 <td>Five LEDs D3–D7 with 220 Ω resistors (R4,R6,R7,R9,R11).</td>
 </tr>
 <tr>
-<td><strong>Green LEDs (Chip LED + 470 Ω series resistor)</strong></td>
+<td><strong>Green LEDs (+ 470 Ω series resistor)</strong></td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">3.3 V</td>
-<td style="text-align: center;">(3.3−2.2)V/470Ω ≈ 0.0023 A</td>
+<td style="text-align: center;">(3.3–2.2)V/470 Ω ≈ 0.0023 A</td>
 <td style="text-align: center;">3.3 V × 0.0023 A = 0.0076 W</td>
 <td style="text-align: center;">2 × 0.0076 = 0.0152 W</td>
 <td>Two LEDs D5,D6 with 470 Ω resistors (R5,R10).</td>
@@ -830,24 +844,24 @@ where:<br />
 <tr>
 <td><strong>Schottky Power Diodes (SOD-323)</strong></td>
 <td style="text-align: center;">2</td>
-<td style="text-align: center;">~0.3 V drop</td>
+<td style="text-align: center;">~0.3 V</td>
 <td style="text-align: center;">0.150 A</td>
 <td style="text-align: center;">0.3 V × 0.150 A = 0.045 W</td>
 <td style="text-align: center;">2 × 0.045 = 0.090 W</td>
 <td>D1,D2 – estimate at full ESP32 current path.</td>
 </tr>
 <tr>
-<td><strong>AP63203WU-7 Buck Converter (efficiency ~85%)</strong></td>
+<td><strong>AP63203WU-7 Buck Converter (≈ 85 % eff.)</strong></td>
 <td style="text-align: center;">1</td>
-<td style="text-align: center;">Input 5 V → 3.3 V</td>
-<td style="text-align: center;">I_out ≈ 0.157 A (sum of all loads)</td>
+<td style="text-align: center;">5 V → 3.3 V</td>
+<td style="text-align: center;">I_out ≈ 0.157 A</td>
 <td style="text-align: center;">P_out ≈ 3.3 V × 0.157 A = 0.518 W</td>
 <td style="text-align: center;">P_in ≈ 0.518 W/0.85 = 0.610 W</td>
 <td>Accounts for total rail load (ESP32 + LEDs + resistors + diodes) and converter losses.</td>
 </tr>
 <tr>
 <td><strong>Fuse, connectors, switches, caps, inductor, USB</strong></td>
-<td style="text-align: center;">– (var)</td>
+<td style="text-align: center;">var</td>
 <td style="text-align: center;">–</td>
 <td style="text-align: center;">–</td>
 <td style="text-align: center;">–</td>
@@ -862,19 +876,44 @@ where:<br />
 <div class="arithmatex">\[
 0.495 + 0.0825 + 0.0152 + 0.0044 + 0.090 + 0.610 \approx \mathbf{1.30\;W}
 \]</div>
-<p>This accounts for<br />
-- the ESP32’s average consumption,<br />
-- five high-current LEDs and two low-current LEDs,<br />
-- pull-up resistors,<br />
-- Schottky diode drops, and<br />
-- buck-converter inefficiency.  </p>
-<p>At a 5 V input, the converter will draw approximately<br />
+<p>At a 5 V input, the converter draws:
 [
-I_{\text{in}} = \frac{0.610 \text{W}}{5 \text{V}} = 0.122 \text{A}
+I_{\text{in}} = \frac{0.610 \text{W}}{5 \text{V}} \approx 0.122 \text{A}
 ]
 from the source, for a total input-side power of ~0.61 W.</p>
 <hr />
-<p><strong>Note:</strong> Peak currents (e.g. Wi-Fi bursts on the ESP32) may briefly exceed these averages; ensure the power supply and regulator heat-sink margins accommodate short-term surges.</p>
+<h2 id="how-the-power-budget-was-used-conclusions">How the Power Budget Was Used &amp; Conclusions</h2>
+<ol>
+<li><strong>Estimating Each Load</strong>  </li>
+<li>We listed every active component (MCU, LEDs, diodes, resistors) and estimated its steady-state current draw based on typical operating conditions.  </li>
+<li>
+<p>Passive devices (fuse, connectors, caps, inductor) were omitted from active loads since they draw no continuous power.</p>
+</li>
+<li>
+<p><strong>Including Converter Efficiency</strong>  </p>
+</li>
+<li>
+<p>The buck converter’s losses were accounted for by dividing the total 3.3 V rail power by its efficiency (≈85 %), ensuring the input-side draw is accurately reflected.</p>
+</li>
+<li>
+<p><strong>Margin for Peak Currents</strong>  </p>
+</li>
+<li>
+<p>The ESP32 can spike well above its average consumption during Wi-Fi transmissions (~300–400 mA peaks). Based on our 1.3 W average, we recommend the power supply handle at least 1 A at 3.3 V (≈3.3 W) to cover transient peaks.</p>
+</li>
+<li>
+<p><strong>Supply Selection</strong>  </p>
+</li>
+<li>
+<p>With a 5 V source supplying ~0.12 A average, a standard 5 V/1 A adapter provides sufficient headroom for both average and peak demands, while minimizing heat in the regulator.</p>
+</li>
+<li>
+<p><strong>Design Implications</strong>  </p>
+</li>
+<li><strong>Thermal:</strong> The regulator must dissipate (5 V–3.3 V) × 0.12 A ≈ 0.204 W. A small PCB copper area or a light heat sink ensures reliable operation.  </li>
+<li><strong>Scalability:</strong> Adding more LEDs or sensors will linearly increase load; the budget structure makes it easy to recalculate total needs when expanding the design.</li>
+</ol>
+<p>Overall, this budget guided our choice of regulator, adapter rating, and thermal design, ensuring both reliable baseline operation and tolerance for brief current surges.  </p>
 
 
 
