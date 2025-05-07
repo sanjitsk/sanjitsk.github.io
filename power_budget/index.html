@@ -576,8 +576,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#power-budget-table" class="md-nav__link">
-    Power Budget Table
+  <a href="#updated-power-budget-table" class="md-nav__link">
+    Updated Power Budget Table
   </a>
   
 </li>
@@ -731,8 +731,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#power-budget-table" class="md-nav__link">
-    Power Budget Table
+  <a href="#updated-power-budget-table" class="md-nav__link">
+    Updated Power Budget Table
   </a>
   
 </li>
@@ -777,117 +777,104 @@ where:<br />
 - <strong>V</strong> = Voltage in volts (V)<br />
 - <strong>I</strong> = Current in amperes (A)  </p>
 <hr />
-<h2 id="power-budget-table">Power Budget Table</h2>
+<h2 id="updated-power-budget-table">Updated Power Budget Table</h2>
 <table>
 <thead>
 <tr>
 <th><strong>Component</strong></th>
-<th><strong>Quantity</strong></th>
-<th><strong>Voltage (V)</strong></th>
-<th><strong>Current (A) per unit</strong></th>
-<th><strong>Power (W) per unit</strong></th>
-<th><strong>Total Power (W)</strong></th>
+<th style="text-align: center;"><strong>Qty</strong></th>
+<th style="text-align: center;"><strong>Voltage (V)</strong></th>
+<th style="text-align: center;"><strong>Current (A) per unit</strong></th>
+<th style="text-align: center;"><strong>Power (W) per unit</strong></th>
+<th style="text-align: center;"><strong>Total Power (W)</strong></th>
 <th><strong>Notes</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>LEDs (WL-SMCC SMT Mono-color Chip LED)</strong></td>
-<td>5</td>
-<td>2V</td>
-<td>10mA (0.01A)</td>
-<td><code>2V × 0.01A = 0.02W</code></td>
-<td><code>5 × 0.02 = 0.1W</code></td>
-<td>Assumed 2V, 10mA each</td>
+<td><strong>ESP32-S3-WROOM-1-N4</strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3.3 V</td>
+<td style="text-align: center;">0.150 A</td>
+<td style="text-align: center;">3.3 V × 0.150 A = 0.495 W</td>
+<td style="text-align: center;">0.495 W</td>
+<td>Typical operating current; peaks can be higher but averaged here.</td>
 </tr>
 <tr>
-<td><strong>Schottky Diode (SOD-323)</strong></td>
-<td>1</td>
-<td>0.3V drop</td>
-<td>1A</td>
-<td><code>0.3V × 1A = 0.3W</code></td>
-<td><code>0.3W</code></td>
-<td>Power dissipation</td>
+<td><strong>Green LEDs (Chip LED + 220 Ω series resistor)</strong></td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">3.3 V</td>
+<td style="text-align: center;">(3.3−2.2)V/220Ω ≈ 0.005 A</td>
+<td style="text-align: center;">3.3 V × 0.005 A = 0.0165 W</td>
+<td style="text-align: center;">5 × 0.0165 = 0.0825 W</td>
+<td>Five LEDs D3–D7 with 220 Ω resistors (R4,R6,R7,R9,R11).</td>
 </tr>
 <tr>
-<td><strong>Fuse (2.5A 125VAC/VDC SMD)</strong></td>
-<td>1</td>
-<td>-</td>
-<td>-</td>
-<td><code>0W</code></td>
-<td><code>0W</code></td>
-<td>No power unless tripped</td>
+<td><strong>Green LEDs (Chip LED + 470 Ω series resistor)</strong></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3.3 V</td>
+<td style="text-align: center;">(3.3−2.2)V/470Ω ≈ 0.0023 A</td>
+<td style="text-align: center;">3.3 V × 0.0023 A = 0.0076 W</td>
+<td style="text-align: center;">2 × 0.0076 = 0.0152 W</td>
+<td>Two LEDs D5,D6 with 470 Ω resistors (R5,R10).</td>
 </tr>
 <tr>
-<td><strong>ESP32-S3-WROOM-1-N4_SKS</strong></td>
-<td>1</td>
-<td>3.3V</td>
-<td>150mA (0.15A)</td>
-<td><code>3.3V × 0.15A = 0.495W</code></td>
-<td><code>0.5W</code></td>
-<td>Can peak at ~1W</td>
+<td><strong>Pull-up / general resistors (10 kΩ)</strong></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">3.3 V</td>
+<td style="text-align: center;">3.3 V/10 kΩ = 0.00033 A</td>
+<td style="text-align: center;">3.3 V × 0.00033 A = 0.0011 W</td>
+<td style="text-align: center;">4 × 0.0011 = 0.0044 W</td>
+<td>Boot/Enable pull-ups and other logic pull-ups (R1,R2,R3,R8).</td>
 </tr>
 <tr>
-<td><strong>AP63203WU-7 (Buck Converter)</strong></td>
-<td>1</td>
-<td>3.3V Output</td>
-<td>2A</td>
-<td><code>3.3V × 2A = 6.6W</code></td>
-<td><code>6.6W / 0.85 = 7.8W</code></td>
-<td>Efficiency ~85%, input power calculated</td>
+<td><strong>Schottky Power Diodes (SOD-323)</strong></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">~0.3 V drop</td>
+<td style="text-align: center;">0.150 A</td>
+<td style="text-align: center;">0.3 V × 0.150 A = 0.045 W</td>
+<td style="text-align: center;">2 × 0.045 = 0.090 W</td>
+<td>D1,D2 – estimate at full ESP32 current path.</td>
 </tr>
 <tr>
-<td><strong>Resistors (10kΩ)</strong></td>
-<td>6</td>
-<td>3.3V</td>
-<td><code>3.3V / 10kΩ = 0.33mA</code></td>
-<td><code>3.3V × 0.00033A = 0.0011W</code></td>
-<td><code>6 × 0.0011 = 0.0066W</code></td>
-<td>Negligible</td>
+<td><strong>AP63203WU-7 Buck Converter (efficiency ~85%)</strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Input 5 V → 3.3 V</td>
+<td style="text-align: center;">I_out ≈ 0.157 A (sum of all loads)</td>
+<td style="text-align: center;">P_out ≈ 3.3 V × 0.157 A = 0.518 W</td>
+<td style="text-align: center;">P_in ≈ 0.518 W/0.85 = 0.610 W</td>
+<td>Accounts for total rail load (ESP32 + LEDs + resistors + diodes) and converter losses.</td>
 </tr>
 <tr>
-<td><strong>Resistors (330Ω)</strong></td>
-<td>5</td>
-<td>3.3V</td>
-<td><code>3.3V / 330Ω = 10mA (0.01A)</code></td>
-<td><code>3.3V × 0.01A = 0.033W</code></td>
-<td><code>5 × 0.033 = 0.165W</code></td>
-<td>Power dissipation</td>
-</tr>
-<tr>
-<td><strong>Push Button Switches</strong></td>
-<td>2</td>
-<td>-</td>
-<td>-</td>
-<td><code>~0W</code></td>
-<td><code>~0W</code></td>
-<td>Minimal power usage</td>
-</tr>
-<tr>
-<td><strong>Micro USB Connector</strong></td>
-<td>1</td>
-<td>-</td>
-<td>-</td>
-<td><code>0W</code></td>
-<td><code>0W</code></td>
-<td>No inherent power consumption</td>
-</tr>
-<tr>
-<td><strong>Inductor (3.9µH)</strong></td>
-<td>1</td>
-<td>-</td>
-<td>-</td>
-<td><code>0W</code></td>
-<td><code>0W</code></td>
-<td>Passive component</td>
+<td><strong>Fuse, connectors, switches, caps, inductor, USB</strong></td>
+<td style="text-align: center;">– (var)</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">~0 W</td>
+<td>Passive components; negligible steady-state draw.</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="total-estimated-power-budget">Total Estimated Power Budget</h2>
+<p>Summing all “Total Power (W)” entries:</p>
 <div class="arithmatex">\[
-0.1 + 0.3 + 0.5 + 7.8 + 0.0066 + 0.165 = 8.87W
+0.495 + 0.0825 + 0.0152 + 0.0044 + 0.090 + 0.610 \approx \mathbf{1.30\;W}
 \]</div>
+<p>This accounts for<br />
+- the ESP32’s average consumption,<br />
+- five high-current LEDs and two low-current LEDs,<br />
+- pull-up resistors,<br />
+- Schottky diode drops, and<br />
+- buck-converter inefficiency.  </p>
+<p>At a 5 V input, the converter will draw approximately<br />
+[
+I_{\text{in}} = \frac{0.610 \text{W}}{5 \text{V}} = 0.122 \text{A}
+]
+from the source, for a total input-side power of ~0.61 W.</p>
+<hr />
+<p><strong>Note:</strong> Peak currents (e.g. Wi-Fi bursts on the ESP32) may briefly exceed these averages; ensure the power supply and regulator heat-sink margins accommodate short-term surges.</p>
 
 
 
