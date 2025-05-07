@@ -25,10 +25,14 @@ Below are high-resolution photographs of our final fabricated PCB, showcasing bo
 
 ### Front View
 ![Stage 1: Ideation](./subfolder/pcbfront.png)
+
+
 *Figure 2.1: Front side of the PCB, showing component placement, silkscreen labels, and indicator LEDs.*
 
 ### Back View
 ![Stage 1: Ideation](./subfolder/pcbback.png)
+
+
 *Figure 2.2: Back side of the PCB, highlighting the ground pour, power rails, and via stitching.*
 
 
