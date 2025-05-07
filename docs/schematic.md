@@ -19,14 +19,21 @@ Here is the Schematic for Internet Communication Subsystem:
 ### 📄 PDF Version  
 [📎 View Schematic (PDF)](./subfolder/schematicpdf.pdf)
 
-# 2. Updated PCB Images
+## 2. Updated PCB Images
 
-Below are photographs of our final fabricated PCB (front and back), replacing earlier renderings with real-world results.
-##Front PCB
-![Stage 1: Ideation](./subfolder/pcbfront.png)
+Below are high-resolution photographs of our final fabricated PCB, showcasing both the front and back views.
 
-##Back PCB
-![Stage 1: Ideation](./subfolder/pcbback.png)
+### Front View
+<p align="center">
+  <img src="./subfolder/pcbfront.png" alt="Final PCB front side" width="600"/>
+</p>
+*Figure 2.1: Front side of the PCB, showing component placement, silkscreen labels, and indicator LEDs.*
+
+### Back View
+<p align="center">
+  <img src="./subfolder/pcbback.png" alt="Final PCB back side" width="600"/>
+</p>
+*Figure 2.2: Back side of the PCB, highlighting the ground pour, power rails, and via stitching.*
 
 
 # 3. Gerber Files Archive
