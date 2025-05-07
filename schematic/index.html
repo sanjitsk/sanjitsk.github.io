@@ -811,7 +811,7 @@
 <p>This schematic outlines the design of a subsystem centered around the ESP32-S3-WROOM-1-N4 microcontroller, which is responsible for communication with the MQTT server and integration into a daisy chain system. The design includes a switching voltage regulator that provides a stable 3.3V output to the ESP32, UART communication lines for bidirectional data exchange, and essential debugging components such as status LEDs and buttons for enabling boot and reset modes. The system’s connectivity is designed to ensure seamless integration with other boards in the daisy chain while enabling efficient communication with the MQTT server. Each component is chosen to meet the specific requirements for robust embedded system design, ensuring reliable operation across multiple interconnected devices.</p>
 <h2 id="schematic-diagram">Schematic Diagram</h2>
 <p>Here is the Schematic for Internet Communication Subsystem:
-<a class="glightbox" href="../subfolder/revision_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Stage 1: Ideation" src="../subfolder/revision_1.png" /></a></p>
+<a class="glightbox" href="./subfolder/schematicfinal.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Stage 1: Ideation" src="./subfolder/schematicfinal.png" /></a></p>
 <h2 id="schematic-files">Schematic Files</h2>
 <h3 id="pdf-version">📄 PDF Version</h3>
 <p><a href="https://drive.google.com/file/d/13G6R2haFRqhL6EKzLBHhy4ZJv-TCrBA7/view?usp=sharing">📎 View Schematic (PDF)</a></p>
@@ -819,127 +819,6 @@
 <p><a class="glightbox" href="https://drive.google.com/file/d/1YD676u0nvkjP4Y-LlhlYBqyKWXF-q1q3/view?usp=drive_link" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Schematic Preview" src="https://drive.google.com/file/d/1YD676u0nvkjP4Y-LlhlYBqyKWXF-q1q3/view?usp=drive_link" /></a></p>
 <h3 id="source-files-zip">📁 Source Files (ZIP)</h3>
 <p><a href="https://drive.google.com/file/d/1QpxOKzqbLA2aMnmsmpnBQE0VEMeH1ZOZ/view?usp=sharing">📥 Download Schematic Files</a></p>
-<h1 id="power-budget-calculation">Power Budget Calculation</h1>
-<h2 id="power-formula-used">Power Formula Used</h2>
-<p>[
-P = V \times I
-]
-where:<br />
-- <strong>P</strong> = Power in watts (W)<br />
-- <strong>V</strong> = Voltage in volts (V)<br />
-- <strong>I</strong> = Current in amperes (A)  </p>
-<hr />
-<h2 id="power-budget-table">Power Budget Table</h2>
-<table>
-<thead>
-<tr>
-<th><strong>Component</strong></th>
-<th><strong>Quantity</strong></th>
-<th><strong>Voltage (V)</strong></th>
-<th><strong>Current (A) per unit</strong></th>
-<th><strong>Power (W) per unit</strong></th>
-<th><strong>Total Power (W)</strong></th>
-<th><strong>Notes</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>LEDs (WL-SMCC SMT Mono-color Chip LED)</strong></td>
-<td>5</td>
-<td>2V</td>
-<td>10mA (0.01A)</td>
-<td><code>2V × 0.01A = 0.02W</code></td>
-<td><code>5 × 0.02 = 0.1W</code></td>
-<td>Assumed 2V, 10mA each</td>
-</tr>
-<tr>
-<td><strong>Schottky Diode (SOD-323)</strong></td>
-<td>1</td>
-<td>0.3V drop</td>
-<td>1A</td>
-<td><code>0.3V × 1A = 0.3W</code></td>
-<td><code>0.3W</code></td>
-<td>Power dissipation</td>
-</tr>
-<tr>
-<td><strong>Fuse (2.5A 125VAC/VDC SMD)</strong></td>
-<td>1</td>
-<td>-</td>
-<td>-</td>
-<td><code>0W</code></td>
-<td><code>0W</code></td>
-<td>No power unless tripped</td>
-</tr>
-<tr>
-<td><strong>ESP32-S3-WROOM-1-N4_SKS</strong></td>
-<td>1</td>
-<td>3.3V</td>
-<td>150mA (0.15A)</td>
-<td><code>3.3V × 0.15A = 0.495W</code></td>
-<td><code>0.5W</code></td>
-<td>Can peak at ~1W</td>
-</tr>
-<tr>
-<td><strong>AP63203WU-7 (Buck Converter)</strong></td>
-<td>1</td>
-<td>3.3V Output</td>
-<td>2A</td>
-<td><code>3.3V × 2A = 6.6W</code></td>
-<td><code>6.6W / 0.85 = 7.8W</code></td>
-<td>Efficiency ~85%, input power calculated</td>
-</tr>
-<tr>
-<td><strong>Resistors (10kΩ)</strong></td>
-<td>6</td>
-<td>3.3V</td>
-<td><code>3.3V / 10kΩ = 0.33mA</code></td>
-<td><code>3.3V × 0.00033A = 0.0011W</code></td>
-<td><code>6 × 0.0011 = 0.0066W</code></td>
-<td>Negligible</td>
-</tr>
-<tr>
-<td><strong>Resistors (330Ω)</strong></td>
-<td>5</td>
-<td>3.3V</td>
-<td><code>3.3V / 330Ω = 10mA (0.01A)</code></td>
-<td><code>3.3V × 0.01A = 0.033W</code></td>
-<td><code>5 × 0.033 = 0.165W</code></td>
-<td>Power dissipation</td>
-</tr>
-<tr>
-<td><strong>Push Button Switches</strong></td>
-<td>2</td>
-<td>-</td>
-<td>-</td>
-<td><code>~0W</code></td>
-<td><code>~0W</code></td>
-<td>Minimal power usage</td>
-</tr>
-<tr>
-<td><strong>Micro USB Connector</strong></td>
-<td>1</td>
-<td>-</td>
-<td>-</td>
-<td><code>0W</code></td>
-<td><code>0W</code></td>
-<td>No inherent power consumption</td>
-</tr>
-<tr>
-<td><strong>Inductor (3.9µH)</strong></td>
-<td>1</td>
-<td>-</td>
-<td>-</td>
-<td><code>0W</code></td>
-<td><code>0W</code></td>
-<td>Passive component</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="total-estimated-power-budget">Total Estimated Power Budget</h2>
-<div class="arithmatex">\[
-0.1 + 0.3 + 0.5 + 7.8 + 0.0066 + 0.165 = 8.87W
-\]</div>
 
 
 
